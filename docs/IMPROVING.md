@@ -44,27 +44,27 @@ scripts/gate.sh               # every eval gate
 
 ## Adding a rule
 
-1. **Measure it on human text.** Count matches in the human corpus. A few
-   lines of Python with `re.finditer` is enough. Unwrap paragraphs first,
-   the way the detector does, or a phrase split across a line break will
-   hide.
-2. **Check the AI side.** The rule needs support in AI-styled text that
-   wasn't written to test it: `skill/scripts/testdata/dirty.md`, the
-   fixtures in `skill/evals/fixtures/`, or real fixer output. Zero human
-   hits alone isn't enough.
-3. **Decide.** Ship it if it stays rare in human text and shows up in AI
-   text. For scale, "in order to" is common in human prose and isn't a
-   rule. A rejected rule is a result too, so say why in the PR.
-4. **Add it.** A regex rule goes in `PATTERNS` in `rules.py`. A word or
-   phrase goes in `WORDS` or `PHRASES`. A rule that needs counts across the
-   document goes in `detect.py`. Give it a `FIX_SCOPE` entry: `sentence`
-   if a one-sentence rewrite can clear it, `paragraph` or `document` if it
-   can't. The tests fail if it has none.
-5. **Add its examples** to `skill/scripts/tests/rule_examples.py`: one
-   dirty sentence that fires it and one clean sentence that fires nothing.
-6. **Re-record and gate.** If `scripts/baseline.sh --check` shows a
-   fixture's count moved, check that the change is the one you meant, then
-   run `scripts/baseline.sh` to re-record it. Run
+1. Count the rule's matches in the human corpus. A few lines of Python
+   with `re.finditer` is enough, as long as you unwrap paragraphs first
+   the way the detector does. Otherwise a phrase split across a line break
+   will hide.
+2. Zero human hits alone isn't enough. The rule also needs support in
+   AI-styled text that wasn't written to test it, such as
+   `skill/scripts/testdata/dirty.md`, the fixtures in
+   `skill/evals/fixtures/`, or real fixer output.
+3. Ship it if it stays rare in human text and shows up in AI text. For
+   scale, "in order to" is common in human prose and isn't a rule. A
+   rejected rule is a result too, so say why in the PR.
+4. Where it goes depends on the kind of rule. A regex rule goes in
+   `PATTERNS` in `rules.py`. A word or phrase goes in `WORDS` or `PHRASES`.
+   A rule that needs counts across the document goes in `detect.py`. Give it a `FIX_SCOPE`
+   entry: `sentence` if a one-sentence rewrite can clear it, `paragraph`
+   or `document` if it can't. The tests fail if it has none.
+5. Add one dirty sentence that fires it and one clean sentence that fires
+   nothing to `skill/scripts/tests/rule_examples.py`.
+6. Re-record and gate. If `scripts/baseline.sh --check` shows a fixture's
+   count moved, check that the change is the one you meant, then run
+   `scripts/baseline.sh` to re-record it. Run
    `scripts/gate.sh --write-human-baseline` so the recorded human rate
    matches, then `scripts/gate.sh`. Commit the baseline changes with the
    rule so the diff shows what moved.

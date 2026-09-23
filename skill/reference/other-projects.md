@@ -7,7 +7,7 @@ per-repo config for project jargon.
 
 All commands assume the skill is at `~/.claude/skills/humanize-writing`
 and that some Python 3.10 or newer is installed. The script finds one on
-its own; set `DESLOP_PYTHON` if it picks the wrong one.
+its own. Set `DESLOP_PYTHON` if it picks the wrong one.
 
 ## Commands
 
@@ -82,5 +82,5 @@ the working tree, not the index, so it also sees unstaged edits.
 `deslop-check.yml` next to this file is a workflow template. Copy it to
 `.github/workflows/`. It checks out `terranvigil/deslop` next to your
 code and runs the detector on the changed files. For a private fork, add
-`token: ${{ secrets.YOUR_TOKEN }}` to that checkout step. It's advisory;
-edit the last line to add `--strict` to make it fail the build.
+`token: ${{ secrets.YOUR_TOKEN }}` to that checkout step. The workflow is
+advisory. To make it fail the build, edit the last line to add `--strict`.

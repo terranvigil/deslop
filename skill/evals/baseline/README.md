@@ -2,7 +2,7 @@
 
 Output of `skill/scripts/check_tells.sh` on every eval fixture and testdata
 file. Each `.txt` file ends with the exit code, which is the finding count
-(capped at 255). `clean.txt` must stay at 0.
+capped at 255. `clean.txt` must stay at 0.
 
 Regenerate with `scripts/baseline.sh` from the repo root. Verify with
 `scripts/baseline.sh --check`, which diffs each output and exits 1 on drift.

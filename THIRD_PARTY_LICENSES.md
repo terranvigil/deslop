@@ -1,9 +1,9 @@
 # Third-party licenses
 
 This project is MIT licensed (see `LICENSE`). One module carries code ported
-from another MIT project; its notice travels separately here rather than
-being folded into the top-level `LICENSE`, since MIT requires the original
-copyright notice to be preserved for that portion.
+from another MIT project. MIT requires the original copyright notice to be
+preserved for that portion, so it lives here, separate from the top-level
+`LICENSE`.
 
 ## `skill/scripts/deslop/contrast.py`
 
