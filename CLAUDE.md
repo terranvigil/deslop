@@ -1,9 +1,9 @@
 # deslop
 
 The `humanize-writing` Claude Code skill: a deterministic detector for AI
-writing tells, a span-targeted fixer, and an eval suite both have to pass.
-`README.md` has the layout and setup; `docs/IMPROVING.md` covers adding
-rules and running the gates.
+writing tells and a span-targeted fixer, plus an eval suite both have to
+pass. `README.md` has the layout and setup. `docs/IMPROVING.md` covers
+adding rules and running the gates.
 
 ## Rules for this repo
 
@@ -18,7 +18,7 @@ rules and running the gates.
   data is CC-BY-SA.
 - Docs and comments describe the project as it is. Keep development history
   out of tracked files.
-- Develop in `skill/`; that's the directory that gets installed.
+- Develop in `skill/`, since that's the directory that gets installed.
 
 ## Goal
 

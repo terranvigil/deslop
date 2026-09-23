@@ -1,70 +1,122 @@
 # deslop
 
-Detect and fix the writing habits that make AI prose easy to spot. It's a `humanize-writing` Claude Code skill with three parts:
+A Claude Code skill, `humanize-writing`, that finds the habits that make AI
+prose easy to spot and rewrites them. It has three parts:
 
-1. The detector is deterministic code that flags spans by rule and by layer
-   (lexical, structural, grammatical, discourse) and reports a score. It draws
-   on Wikipedia's "Signs of AI writing", the grammatical features from
-   Reinhart et al. (PNAS 2025), and Sam Paech's slop-score contrast regexes.
-2. The fixer is a skill that rewrites only flagged spans, keeps facts locked,
-   follows the writer's voice sample, and stops after a few passes.
-3. In the evals, dirty fixtures have to get better while clean fixtures and
-   pre-LLM human writing stay clean and every fact survives. The evals decide
-   whether a change helped.
+1. A detector: deterministic Python that flags spans by rule and by layer
+   (lexical, structural, grammatical, discourse) and scores the document.
+   Its rules draw on Wikipedia's "Signs of AI writing", the grammatical
+   features in Reinhart et al. (PNAS 2025), and Sam Paech's slop-score
+   contrast regexes.
+2. A fixer: the skill's workflow. Claude rewrites only the flagged spans
+   and checks that every number, date, URL and quote survived. It stops
+   after three passes.
+3. Evals: dirty fixtures have to improve while clean fixtures and pre-LLM
+   human writing stay clean.
 
-The goal is prose a skilled reader doesn't wince at.
+The goal is prose a skilled reader doesn't wince at, not detector evasion.
 
-## Layout
+## Install
 
-```
-skill/                the skill itself, symlinked into ~/.claude/skills/
-  SKILL.md            the fixer workflow
-  scripts/            detector (deslop/), fact lock, check_tells.sh entry point
-  evals/              fixtures, baselines and eval expectations
-  reference/          the tell catalog and use in other repos
-commands/deslop.md    /deslop, an alias for the skill
-docs/IMPROVING.md     adding and tuning rules, the fixer, running the gates
-scripts/gate.sh       one command, pass/fail per eval gate
-scripts/baseline.sh   regenerate or check the fixture baseline
-CLAUDE.md             repo rules, loaded by Claude Code
-```
-
-## Setup
-
-Develop in `skill/`, since that's the directory that gets installed. Symlink
-it in:
+You need Claude Code and Python 3.10 or newer. There are no Python
+packages to install.
 
 ```bash
+git clone https://github.com/terranvigil/deslop.git
+cd deslop
 ln -s "$PWD/skill" ~/.claude/skills/humanize-writing
-mkdir -p ~/.claude/commands && ln -s "$PWD/commands/deslop.md" ~/.claude/commands/deslop.md
+mkdir -p ~/.claude/commands
+ln -s "$PWD/commands/deslop.md" ~/.claude/commands/deslop.md   # optional /deslop alias
 ```
 
-The second link adds `/deslop` as an alias for `/humanize-writing`.
-
-Then verify:
+Check that the detector runs:
 
 ```bash
-scripts/gate.sh
+~/.claude/skills/humanize-writing/scripts/check_tells.sh skill/scripts/testdata/dirty.md
 ```
 
-## Using it in other repos
+It should print one finding per line. If it picks up the wrong Python, set
+`DESLOP_PYTHON` to a 3.10+ interpreter.
 
-Nothing to install per repo. Ask Claude to humanize a doc, or run the
-detector directly:
+## Use
+
+In any Claude Code session, ask for it in plain words ("humanize
+docs/design.md", "make this PR description sound less like AI") or call it
+directly:
+
+```
+/humanize-writing docs/design.md
+/deslop README.md
+```
+
+Claude runs the detector, rewrites the flagged passages, and checks the
+result against the original for new tells and dropped facts. It revises
+the file in place and reports what changed in a line or two. The same
+rules apply when Claude drafts a new document for you.
+
+To run the detector on its own, like a linter:
 
 ```bash
-~/.claude/skills/humanize-writing/scripts/check_tells.sh --changed   # new findings since main
+CT=~/.claude/skills/humanize-writing/scripts/check_tells.sh
+$CT README.md                 # every finding in one file
+$CT --json README.md          # spans, rule ids, severity, fix scope, score
+$CT --diff old.md new.md      # only what new.md added, plus dropped facts
+$CT --changed                 # new findings in Markdown changed since main
 ```
 
-`skill/reference/other-projects.md` covers `--changed`, the per-repo
-`.deslop.json`, an advisory pre-commit hook and a GitHub Actions template.
+The exit code is the number of findings. `--strict` makes `--changed` exit
+1 on a severity-3 finding. `skill/reference/other-projects.md` has the
+rest, including a pre-commit hook and a GitHub Actions template.
+
+## Configure
+
+- **Your voice.** Copy `skill/voice.md` to `skill/voice.local.md` and fill
+  it in from things you wrote by hand. The fixer matches it when it writes
+  as you. `voice.local.md` is gitignored.
+- **Project jargon.** A `.deslop.json` at a repo's root allows terms the
+  detector would otherwise flag and turns off rules that don't fit the
+  project:
+
+  ```json
+  {
+    "allow":   ["surface", "surfaces"],
+    "disable": ["authorless"],
+    "ignore":  ["CHANGELOG.md", "vendor/"]
+  }
+  ```
+
+  A `.deslop.json` in a subdirectory overrides it for the files below.
+  `skill/reference/other-projects.md` lists every key.
+- **Pet peeves.** `skill/scripts/deslop/data/personal.json` maps words and
+  phrases you never want to see to a fix hint. The detector flags them
+  like its own.
+- **Rewrite log.** Set `DESLOP_LOG_TRIPLES=1` and the fixer appends each
+  accepted rewrite (original span, new text, score change) to
+  `logs/triples.jsonl` in this repo. It's off by default. The log is
+  gitignored.
+
+## Develop
+
+`skill/` is the installed directory, so edits there are live. The rule
+catalog is `skill/reference/tells.md`. The detector's rules are in
+`skill/scripts/deslop/rules.py`. `docs/IMPROVING.md` covers adding and
+tuning rules.
+
+```bash
+make test                   # per-rule dirty/clean examples
+scripts/baseline.sh --check # detector output on the fixtures hasn't drifted
+scripts/gate.sh             # every eval gate, pass or fail
+```
+
+The human-writing gate needs a corpus of pre-LLM prose in
+`voice/human-baseline/`, which isn't shipped. Without it, that gate skips.
 
 ## Credits
 
 Sam Paech (slop-score, slop-forensics, auto-antislop, the Antislop paper),
-WikiProject AI Cleanup, Chakrabarty, Laban and Wu (LAMP, WQRM), Reinhart et al.,
-Russell, Karpinska and Iyyer, Shaib et al., and the community humanizer
-skills that came before this one.
+WikiProject AI Cleanup, Chakrabarty, Laban and Wu (LAMP, WQRM), Reinhart
+et al., Russell, Karpinska and Iyyer, Shaib et al., and the community
+humanizer skills that came before this one.
 
 ## License
 
