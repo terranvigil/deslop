@@ -274,6 +274,8 @@ PATTERNS = [
     ("cliche-header", "structural", 2, "cliche header", "specific title or no header", r"^#{1,6} +(overview|key takeaways?|next steps|what changed|conclusion|final thoughts|(challenges and )?future outlook|key statistics|introduction)\s*$", I, "heading"),
     ("how-we-header", "structural", 2, "how-we header", "name the actual content; specific title or no header", r"^#{1,6} +(how (we|i)|the (road|journey) to)\b", I, "heading"),
     ("date-in-prose", "structural", 1, "date in prose", "drop the date; state the fact or link the ticket", r"\b(19|20)[0-9]{2}-[0-1][0-9]-[0-3][0-9]\b", 0, "block"),
+    # a ticket reads as its id, with the url in the link target: [TIK-1234](url)
+    ("ticket-url", "structural", 2, "ticket link shown as a url", "show only the ticket id and put the url in the link: [TIK-1234](url)", r"https?://[^\s)\]]*(/browse/[A-Z][A-Z0-9]+-[0-9]+|/issues?/[A-Za-z0-9-]+|/pull/[0-9]+|selectedIssue=[A-Z][A-Z0-9]+-[0-9]+)", 0, "block"),
     ("schedule-date", "structural", 1, "schedule date in prose", "express it as a gate or milestone, not a calendar date", r"\b20[0-9]{2}[ -](Q[1-4]|H[12])\b|\b(Q[1-4]|H[12]) 20[0-9]{2}\b", 0, "block"),
     ("status-tag", "structural", 1, "status tag in prose", "drop it; status goes stale, link the ticket instead", r"\[(RELEASED|DONE|BACKLOG|IN PROGRESS|DECLINED|CLOSED|RESOLVED|TODO|WIP)\]", 0, "block"),
     ("status-parens", "structural", 1, "status label in parens", "drop it; status goes stale, link the ticket instead", r"\((released|in progress|backlog|declined)\)", I, "block"),
@@ -364,6 +366,24 @@ ISO_DATE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 VERSION = re.compile(r"[0-9]+\.[0-9]+\.[0-9]+")
 FIGURE = re.compile(r"[0-9]+([,.][0-9]+)*")
 
+# specifics a ticket or status writeup piles into its story: code spans,
+# urls, ticket keys, versions, identifiers, figures. link targets don't
+# count, since a reader never sees them. a paragraph needs three kinds
+# mixed together to fire, which keeps plain number-heavy prose out
+# (number-dense-* cover that).
+SPECIFICS = [
+    re.compile(r"`[^`\n]+`"),
+    re.compile(r"https?://\S+"),
+    re.compile(r"\b[A-Z][A-Z0-9]{1,9}-[0-9]+\b"),
+    re.compile(r"\bv?[0-9]+\.[0-9]+(\.[0-9]+)+\b|\bv[0-9]+(\.[0-9]+)?\b"),
+    re.compile(r"\b[a-z]+_[a-z0-9_]+\b|\b[a-z]+[A-Z][A-Za-z0-9]*\b"),
+    FIGURE,
+]
+LINK_TARGET_RAW = re.compile(r"\]\([^)]*\)")
+# human technical prose stays under this outside pasted logs and markup
+FACT_DENSE_MIN = 8
+FACT_DENSE_PER_100W = 25
+
 
 # --- thresholds from calibrate.py ------------------------------------------
 # post-comma participial clauses per 1,000 words: set above the human
@@ -377,6 +397,7 @@ FIGURE = re.compile(r"[0-9]+([,.][0-9]+)*")
 # "sentence". families (overused:, llm-adverb:) match on the prefix.
 FIX_SCOPE = {
     "paragraph": {"monotone-rhythm", "fresh-subjects", "number-dense-sentence", "number-dense-paragraph",
+                  "fact-dense-paragraph",
                   "symmetric-bullets", "italic-subtitle"},
     "document": {"colon-splice", "semicolon-chain", "authorless", "no-hedges", "flat-rhythm", "dash-budget",
                  "participial-rate", "even-section-weight", "thematic-breaks", "rule-of-three",

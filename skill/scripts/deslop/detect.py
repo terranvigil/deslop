@@ -220,6 +220,15 @@ class Detector:
             digits = len(re.findall(r"[0-9]", t))
             if digits > 12:
                 self.add("number-dense-paragraph", "discourse", 2, f"number-dense paragraph ({digits} digits)", "state the takeaway in prose; put the values in a table", b.start, b.end, "")
+            raw = R.LINK_TARGET_RAW.sub("]", d.src[b.start:b.end])
+            n = kinds = 0
+            for rx in R.SPECIFICS:
+                k = len(rx.findall(raw))
+                n, kinds = n + k, kinds + (k > 0)
+                raw = rx.sub(" ", raw)
+            w = len(d.src[b.start:b.end].split())
+            if kinds >= 3 and n >= R.FACT_DENSE_MIN and n * 100 >= R.FACT_DENSE_PER_100W * w:
+                self.add("fact-dense-paragraph", "discourse", 2, f"facts interlaced through the story ({n} specifics in {w} words)", "tell the story in plain prose; move ids, versions, counts and links to a list at the end", b.start, b.end, "")
 
         # hedge stack: 3+ hedges in one sentence
         for b in d.prose_blocks:
