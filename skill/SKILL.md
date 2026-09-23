@@ -121,6 +121,17 @@ that loses all its warmth is as badly revised as one full of "thrilled".
 Don't bolt on folksy filler to sound human. Match the document's job first
 and the voice profile second.
 
+Tickets and status writeups (Jira, Linear, GitHub issues) get their own
+shape. The story comes first, in plain prose: what's wrong or wanted, who
+it affects, and what done looks like. The specifics the story would
+otherwise trip over go in a list at the end under a plain heading like
+"Details". That covers ticket keys, versions, config keys, hostnames,
+counts, dates and links. Move facts there. Don't drop them: every one in
+the original ends up in the story or the list. A ticket reference shows
+only its id, with the URL in the link target: `[TIK-1234](url)`, never the
+bare URL (`ticket-url`). The `fact-dense-paragraph`
+finding usually means a paragraph needs this split (tells 23f).
+
 ## Workflow
 
 1. Fix the structure before any sentence-level work. Read the headings

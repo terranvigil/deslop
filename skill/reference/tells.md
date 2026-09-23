@@ -181,6 +181,21 @@ the other.
     the 320 lockers"), or when precision itself is the message. Every claim
     of change gets exactly one number. Zero is as much a defect as five.
 
+23f. **Facts interlaced through a story.** [discourse] A ticket or status
+    writeup where every clause carries an ID, a version, a config key, a
+    count or a link. Each fact is right, but the reader can't find the
+    story under them. Tell the story in plain prose and move the specifics
+    to a list at the end. Every fact survives the move.
+    - Before: "Since v4.12.1 the `reminder_send` job (BK-2291) double-sends to about 140 of 2,300 members on the `nightly-eu` cron, per the 3 Oct logs at https://logs.example.com/q/88, and BK-2240 already touched `send_window_min`."
+    - After: "Some members get the same class reminder twice. It started with the last release and only affects the nightly European run.
+
+      Details:
+      - Version: v4.12.1
+      - Job: `reminder_send` on the `nightly-eu` cron
+      - Affected: about 140 of 2,300 members
+      - Logs (3 Oct): https://logs.example.com/q/88
+      - Related: [BK-2291](https://tracker.example.com/browse/BK-2291), [BK-2240](https://tracker.example.com/browse/BK-2240) (changed `send_window_min`)"
+23g. **Ticket links shown as URLs.** [structural] "Fixed in https://tracker.example.com/browse/BK-2291." A ticket reads as its id. Put the URL in the link target so only the id shows: "Fixed in [BK-2291](https://tracker.example.com/browse/BK-2291)." The same goes for GitHub issues and pull requests.
 24. **Tilde approximations.** [lexical] "~30%" in prose. "About" or the plain number, and sparingly.
 24a. **Dates and statuses baked into sentences.** [structural] Parenthetical dates and status tags sprinkled through prose read like a changelog bot and go stale the moment the ticket moves. They're especially common in ticket descriptions and status writeups. State the fact and link the ticket for its live status. Keep a date only when the date itself is the point.
     - Before: "The lane-closure form was rebuilt under PERMIT-77 [DONE] and the fee refund work (in progress) should wrap up by 2026-11-30."
