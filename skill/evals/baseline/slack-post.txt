@@ -1,0 +1,25 @@
+line 1: dash/semicolon budget (3 in 113 words, allowed 1) -> most are a comma or a full stop; keep the one that earns it
+line 1: emoji -> delete it (Slack register: at most one, deliberately)
+line 1: em dash -> hyphen, comma, or two sentences
+line 1: banned word 'landed' -> fine only for things that physically land (aircraft, a plane, a probe); when work lands (a change, a migration, a PR, a fix) that is the tell: say shipped, is live, is in place, went out
+line 3: banned word 'pivotal' -> important, central
+line 3: banned word 'journey' -> fine for literal travel; otherwise say the actual process
+line 5: symmetric bullet list (3 items, all opening with a bold label) -> let the items differ in length and shape; fold the label into the sentence or drop it
+line 5: bold label -> make it prose or a real heading
+line 5: unquantified intensifier -> give the number, or drop the adverb
+line 5: data in parentheses -> weave it in, or give it its own sentence
+line 5: tilde approximation -> 'about' or the plain number
+line 6: bold label -> make it prose or a real heading
+line 6: banned phrase 'serves as' -> is
+line 6: banned word 'robust' -> solid, reliable
+line 7: bold label -> make it prose or a real heading
+line 7: banned word 'leveraging' -> rewrite without it
+line 9: banned phrase 'it's worth noting' -> cut it; say the thing
+line 9: contrast frame (not-dash) -> state the positive claim; drop the negated half
+line 9: em dash -> hyphen, comma, or two sentences
+line 9: banned word 'comprehensive' -> full, complete
+line 9: emoji -> delete it (Slack register: at most one, deliberately)
+line 9: em dash -> hyphen, comma, or two sentences
+line 9: banned phrase 'i'd be happy to' -> cut it
+clusters: line 1 (3 findings), line 5 (5 findings), line 6 (3 findings), line 9 (7 findings)
+exit 23

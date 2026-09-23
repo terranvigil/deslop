@@ -1,0 +1,21 @@
+{
+  "note": "false-positive rate on voice/human-baseline/, typography and number rules excluded. Regenerate with `scripts/gate.sh --write-human-baseline` only after a deliberate detector change, and commit the diff.",
+  "ceiling_per_1k": {
+    "blog": 9.0,
+    "paper": 10.0
+  },
+  "rates": {
+    "blog": {
+      "files": 38,
+      "words": 74191,
+      "findings": 589,
+      "rate_per_1k": 7.94
+    },
+    "paper": {
+      "files": 1,
+      "words": 12996,
+      "findings": 111,
+      "rate_per_1k": 8.54
+    }
+  }
+}

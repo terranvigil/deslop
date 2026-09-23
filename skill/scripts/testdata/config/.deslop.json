@@ -1,0 +1,4 @@
+{
+  "allow": ["gates"],
+  "disable": ["comma-and-clause"]
+}
