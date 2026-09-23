@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.env
+# opt-in fixer logs (DESLOP_LOG_TRIPLES) hold the user's text
+logs/
+# the user's own writing: voice samples and personal voice profile
+voice/
+skill/voice.local.md
+# private notes and instructions
+local/
+CLAUDE.local.md

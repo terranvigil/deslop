@@ -1,0 +1,41 @@
+line 1: cliche header -> specific title or no header
+line 3: italic subtitle under title -> fold it into the opening paragraph
+line 5: banned phrase 'serves as' -> is
+line 5: in today's opener -> cut the opener; start with the point
+line 5: banned word 'landscape' -> fine if literal; banned in the abstract sense
+line 5: banned word 'delves' -> rewrite without it
+line 5: banned word 'comprehensive' -> full, complete
+line 5: banned phrase 'it's important to note' -> cut it; say the thing
+line 5: banned word 'posture' -> fine if literal; banned in the abstract sense
+line 5: trailing participial clause -> end the sentence at the fact; say the consequence in its own sentence
+line 5: banned word 'showcasing' -> rewrite without it
+line 7: cliche header -> specific title or no header
+line 9: banned phrase 'key takeaway' -> say the point
+line 11: symmetric bullet list (4 items, all opening with a bold label) -> let the items differ in length and shape; fold the label into the sentence or drop it
+line 11: bold label -> make it prose or a real heading
+line 11: pseudo-cleft reveal ('is what X') -> just say what it does
+line 12: bold label -> make it prose or a real heading
+line 12: banned word 'leveraging' -> rewrite without it
+line 12: banned word 'robust' -> solid, reliable
+line 12: data in parentheses -> weave it in, or give it its own sentence
+line 12: tilde approximation -> 'about' or the plain number
+line 13: bold label -> make it prose or a real heading
+line 13: negative parallelism -> state it directly
+line 14: bold label -> make it prose or a real heading
+line 14: banned word 'pivotal' -> important, central
+line 14: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 16: cliche header -> specific title or no header
+line 18: banned phrase 'despite these challenges' -> cut the frame; state the open problems
+line 18: banned phrase 'the path forward' -> say what you'll do next
+line 18: formulaic transition -> cut it, or use a plain link
+line 18: banned phrase 'industry reports suggest' -> name the report, or cut the claim
+line 18: banned word 'leveraging' -> rewrite without it
+line 18: banned word 'seamless' -> rewrite without it
+line 18: banned word 'transformative' -> rewrite without it
+line 18: banned word 'underscores' -> show, make clear
+line 18: em dash -> hyphen, comma, or two sentences
+line 18: banned phrase 'a testament to' -> cut, or say plainly why it matters
+line 18: banned word 'testament' -> rewrite without it
+line 18: banned word 'enduring' -> rewrite without it
+clusters: line 5 (9 findings), line 11 (3 findings), line 12 (5 findings), line 14 (3 findings), line 18 (12 findings)
+exit 39

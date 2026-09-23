@@ -1,0 +1,22 @@
+# advisory prose check on pull requests. copy to .github/workflows/ in the
+# repo you want checked; see other-projects.md next to this file.
+name: prose check
+on: pull_request
+
+jobs:
+  deslop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          repository: terranvigil/deslop
+          path: .deslop-tool
+      # move it out of the workspace, or --changed reads it as untracked files
+      - run: mv .deslop-tool "$RUNNER_TEMP/deslop"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: '"$RUNNER_TEMP/deslop/skill/scripts/check_tells.sh" --changed "origin/${{ github.base_ref }}"'

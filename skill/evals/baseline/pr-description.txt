@@ -1,0 +1,23 @@
+line 1: cliche header -> specific title or no header
+line 3: banned phrase 'it's important to note' -> cut it; say the thing
+line 3: negative parallelism -> state it directly
+line 3: banned word 'facilitate' -> help
+line 5: symmetric bullet list (3 items, all opening with a bold label) -> let the items differ in length and shape; fold the label into the sentence or drop it
+line 5: bold label -> make it prose or a real heading
+line 5: banned phrase 'serves as' -> is
+line 6: bold label -> make it prose or a real heading
+line 6: banned word 'enhanced' -> improve, or name the change
+line 7: bold label -> make it prose or a real heading
+line 7: data in parentheses -> weave it in, or give it its own sentence
+line 7: tilde approximation -> 'about' or the plain number
+line 9: cliche header -> specific title or no header
+line 11: formulaic transition -> cut it, or use a plain link
+line 11: banned word 'bolstered' -> rewrite without it
+line 11: banned word 'leveraging' -> rewrite without it
+line 11: banned word 'comprehensive' -> full, complete
+line 11: banned word 'underscores' -> show, make clear
+line 11: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 11: banned word 'facilitates' -> help
+line 11: banned word 'seamless' -> rewrite without it
+clusters: line 3 (3 findings), line 5 (3 findings), line 7 (3 findings), line 11 (8 findings)
+exit 21

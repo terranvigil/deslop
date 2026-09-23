@@ -1,0 +1,155 @@
+line 1: dash/semicolon budget (12 in 1154 words, allowed 1) -> most are a comma or a full stop; keep the one that earns it
+line 3: italic subtitle under title -> fold it into the opening paragraph
+line 5: banned phrase 'it's important to note' -> cut it; say the thing
+line 5: data in parentheses -> weave it in, or give it its own sentence
+line 6: banned word 'leverage' -> use
+line 6: banned word 'robust' -> solid, reliable
+line 7: bold label -> make it prose or a real heading
+line 7: em dash -> hyphen, comma, or two sentences
+line 7: banned word 'seamless' -> rewrite without it
+line 9: run of fresh bare subjects (4+ sentences, none threaded to the last) -> thread it (subordinate, connect, lead with the point) or make it a real list
+line 9: in today's opener -> cut the opener; start with the point
+line 9: monotone sentence rhythm (4 similar-length sentences) -> vary the lengths: fold two together, or cut one short
+line 9: number-dense paragraph (18 digits) -> state the takeaway in prose; put the values in a table
+line 9: banned word 'myriad' -> rewrite without it
+line 9: arrow in prose -> write the chain as a sentence, or put it in a code block
+line 10: tilde approximation -> 'about' or the plain number
+line 10: trailing participial clause -> end the sentence at the fact; say the consequence in its own sentence
+line 10: banned word 'showcasing' -> rewrite without it
+line 10: banned word 'underscore' -> show, make clear
+line 12: en dash used as punctuation -> hyphen, comma, or two sentences
+line 13: curly quote -> straight quotes
+line 13: curly quote -> straight quotes
+line 14: date in prose -> drop the date; state the fact or link the ticket
+line 15: schedule date in prose -> express it as a gate or milestone, not a calendar date
+line 16: status tag in prose -> drop it; status goes stale, link the ticket instead
+line 16: status label in parens -> drop it; status goes stale, link the ticket instead
+line 16: banned word 'land' -> fine only for things that physically land (aircraft, a plane, a probe); when work lands (a change, a migration, a PR, a fix) that is the tell: say shipped, is live, is in place, went out
+line 17: quantifier appositive tail -> give it a verb or its own clause, not a tacked-on ', both/each/all X'
+line 18: banned word 'load-bearing' -> fine if literal (structures); as a metaphor say essential, or what depends on it
+line 18: banned word 'pinned' -> fine for versions and dependencies; for constraints say accepts only, fixed to
+line 19: banned phrase 'blast radius' -> say what actually breaks and how far
+line 19: banned word 'ambient' -> fine if literal (light, sound, temperature); for auth name the credential or its absence
+line 19: banned word 'binds' -> fine for sockets and mounts; otherwise say ties, links, includes
+line 20: banned word 'spearheads' -> rewrite without it
+line 20: banned word 'surface' -> fine if physical; for APIs say endpoints/routes, for verbs say appear, show up
+line 21: phrase 'to front' -> expose, serve through, or put behind
+line 21: banned word 'fronts' -> for topology say expose, serve through, or put behind
+line 22: banned word 'fights' -> fine for people; for tech say is a bad match for, works against
+line 22: banned phrase 'leans on' -> depends on, uses
+line 23: overused qualifier 'deliberately' (3 times) -> keep one; vary or cut the rest
+line 24: banned phrase 'defended against' -> 'protected against', or name the check
+line 24: count-appositive enumeration -> verbless count list; give it a subject and a verb
+line 24: overused word 'canonical' (2 times) -> keep it where it's the established term; name the concrete thing elsewhere
+line 25: semicolon-chain cadence (10 instances) -> split them into sentences; at most one semicolon per document
+line 25: banned word 'keystone' -> say what it enables instead
+line 25: colon-splice cadence (9 instances) -> restructure most into plain sentences; keep the few that earn it
+line 25: labeled-intro sentence ('The x: ...') -> fold the label into the sentence
+line 26: labeled-intro sentence ('The x: ...') -> fold the label into the sentence
+line 26: labeled-intro sentence ('The x: ...') -> fold the label into the sentence
+line 26: labeled-intro sentence ('The x: ...') -> fold the label into the sentence
+line 29: how-we header -> name the actual content; specific title or no header
+line 34: run of fresh bare subjects (4+ sentences, none threaded to the last) -> thread it (subordinate, connect, lead with the point) or make it a real list
+line 34: monotone sentence rhythm (4 similar-length sentences) -> vary the lengths: fold two together, or cut one short
+line 36: contrast scaffold ('isn't X, it's Y') -> state the positive claim; drop the negated half
+line 37: contrast scaffold ('X; it doesn't Y') -> state the positive claim; drop the negated half
+line 37: aphoristic echo sentence -> cut it, or merge the point into the previous sentence
+line 38: contrast as a habit (6 in 1154 words) -> state the fact; keep a foil only where the other option was real
+line 38: trailing 'X, not Y' contrast -> state the positive claim once; cut the negated foil
+line 42: number-dense paragraph (21 digits) -> state the takeaway in prose; put the values in a table
+line 42: number-dense sentence (7 figures) -> keep the one figure the claim needs; move the rest to a table
+line 43: table value restated in prose ('13.4') -> name the takeaway in prose; let the table hold the value
+line 43: table value restated in prose ('16.9') -> name the takeaway in prose; let the table hold the value
+line 45: hedged number with false precision -> round to two significant figures, or drop the hedge
+line 45: hedged number with false precision -> round to two significant figures, or drop the hedge
+line 45: over-precise percentage -> round it; decimals on a percentage need a denominator over 100
+line 53: false-suspense transition -> cut the tease; say the thing
+line 54: self-posed question -> state the answer as a sentence
+line 54: fake-candid opener -> cut it; performed candor is its own tell
+line 56: pedagogical hand-holding -> explain the mechanism instead of announcing that you will
+line 56: second clause joined by a bare "and" -> two facts in one sentence: split at the and, or make one the reason for the other
+line 56: pedagogical hand-holding -> explain the mechanism instead of announcing that you will
+line 59: invented persona -> use a real case from the source material, or cut the example
+line 59: banned word 'fights' -> fine for people; for tech say is a bad match for, works against
+line 59: scene-setting opener -> cut the opener; start with the point
+line 62: 'quietly' insight claim -> say who did what, with evidence
+line 63: unquantified intensifier -> give the number, or drop the adverb
+line 65: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 65: second clause joined by a bare "and" -> two facts in one sentence: split at the and, or make one the reason for the other
+line 65: banned word 'landed' -> fine only for things that physically land (aircraft, a plane, a probe); when work lands (a change, a migration, a PR, a fix) that is the tell: say shipped, is live, is in place, went out
+line 66: trailing participial clause -> end the sentence at the fact; say the consequence in its own sentence
+line 67: trailing participial clause -> end the sentence at the fact; say the consequence in its own sentence
+line 67: banned word 'highlighting' -> usually a trailing participial clause; end the sentence at the fact
+line 69: banned word 'firstly' -> first, then; or drop the enumeration
+line 69: banned word 'enhance' -> improve, or name the change
+line 69: banned word 'secondly' -> first, then; or drop the enumeration
+line 70: banned phrase 'align with' -> match, follow, agree with
+line 70: banned phrase 'aims to' -> say what it does, or who intends what
+line 70: banned phrase 'shed light on' -> show, explain, measure
+line 71: banned word 'individuals' -> people
+line 71: formulaic transition -> cut it, or use a plain link
+line 71: banned word 'surface' -> fine if physical; for APIs say endpoints/routes, for verbs say appear, show up
+line 71: banned phrase 'valuable insights' -> say what was learned
+line 71: banned word 'valuable' -> say what it is worth and to whom
+line 72: banned word 'insights' -> say what was learned
+line 74: rule of three (3 triples) -> keep one; make the others two items or four
+line 77: reminder close -> cut it; the document already said this
+line 79: model residue string -> delete it; this is a citation artifact, not content
+line 79: model residue string -> delete it; this is a citation artifact, not content
+line 81: thematic breaks as section glue (3 rules) -> headings separate sections; delete the rules
+line 93: number-dense sentence (4 figures) -> keep the one figure the claim needs; move the rest to a table
+line 93: self-restatement marker -> say it once, in the better version
+line 94: manufactured foil ('as opposed to Y') -> state the positive claim; cut the foil
+line 94: manufactured foil ('X rather than Y') -> keep only if Y was genuinely on the table; otherwise state X alone
+line 98: second fact hitched on by a comma -> split it: the clause after the comma becomes its own sentence
+line 98: manufactured foil ('X rather than Y') -> keep only if Y was genuinely on the table; otherwise state X alone
+line 100: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 102: second clause joined by a bare "and" -> two facts in one sentence: split at the and, or make one the reason for the other
+line 104: contrast frame (np-be-not-sep-they-be) -> state the positive claim; drop the negated half
+line 108: banned phrase 'according to some' -> name the source, or cut it
+line 108: banned phrase 'many believe' -> say who, or cut the claim
+line 109: banned phrase 'studies show' -> cite the study, or cut the claim
+line 109: banned phrase 'it is widely' -> say who holds the view, or cut the hedge
+line 110: banned phrase 'industry reports suggest' -> name the report, or cut the claim
+line 111: banned phrase 'experts agree' -> name who, or cut the claim
+line 111: banned phrase 'research indicates' -> cite the research, or cut the claim
+line 114: banned phrase 'recognized as' -> say what it does instead of the label
+line 114: banned phrase 'featured in' -> say what it does instead of where it was mentioned
+line 115: banned phrase 'profiled by' -> say what it does instead of where it was mentioned
+line 115: banned phrase 'has been cited by' -> say what it does instead of where it was mentioned
+line 118: banned phrase 'you're absolutely right' -> cut it
+line 118: banned phrase 'certainly!' -> cut it
+line 119: banned phrase 'as of my last update' -> cut it; say what's currently true
+line 119: banned phrase 'would you like me to' -> cut it; state what you did or will do
+line 120: banned phrase '[your name]' -> fill in the real value or delete the placeholder
+line 121: banned phrase '[insert' -> fill in the real value or delete the placeholder
+line 121: banned phrase 'i hope this helps' -> cut it
+line 125: pseudo-cleft reveal ('is what X') -> just say what it does
+line 125: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 126: banned phrase 'acts as' -> is
+line 126: banned phrase 'represents a' -> is a
+line 131: banned phrase 'on the one hand' -> cut the frame; state the position
+line 132: banned word 'honestly' -> honesty is assumed in tech docs; state the limit or cost plainly
+line 132: banned phrase 'it depends' -> say what it depends on, or commit
+line 132: banned phrase 'both approaches have' -> say which one you picked and why
+line 133: banned phrase 'there are trade-offs' -> name the actual trade-off, or commit
+line 133: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 133: banned phrase 'each has its merits' -> say which one you picked and why
+line 133: formulaic transition -> cut it, or use a plain link
+line 133: banned phrase 'ultimately, the choice' -> make the choice; say what you chose
+line 138: overused word 'substrate' (2 times) -> keep it where it's the established term; name the concrete thing elsewhere
+line 138: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 139: overused word 'rides' (2 times) -> keep it where it's the established term; name the concrete thing elsewhere
+line 140: overused word 'wedge' (2 times) -> keep it where it's the established term; name the concrete thing elsewhere
+line 140: banned word 'lands' -> fine only for things that physically land (aircraft, a plane, a probe); when work lands (a change, a migration, a PR, a fix) that is the tell: say shipped, is live, is in place, went out
+line 145: appositive caption or alt text -> name the subject plainly; if the second half matters, give it a verb
+line 147: appositive caption or alt text -> name the subject plainly; if the second half matters, give it a verb
+line 147: count-appositive enumeration -> verbless count list; give it a subject and a verb
+line 154: one thing, two spellings ('lockerSlot' and 'LockerSlot') -> pick one spelling and use it everywhere
+line 158: monotone sentence rhythm (4 similar-length sentences) -> vary the lengths: fold two together, or cut one short
+line 158: throat-clearing preamble -> cut it; say the thing
+line 159: vague quantity filler -> name them, give the count, or cut the phrase
+line 160: throat-clearing preamble -> cut it; say the thing
+line 161: hedge stack (4 hedges in one sentence) -> keep the one hedge the uncertainty needs, or commit
+clusters: line 5 (4 findings), line 7 (3 findings), line 9 (41 findings), line 36 (5 findings), line 42 (4 findings), line 45 (3 findings), line 53 (3 findings), line 56 (3 findings), line 59 (3 findings), line 65 (6 findings), line 69 (12 findings), line 93 (4 findings), line 108 (7 findings), line 114 (4 findings), line 118 (7 findings), line 125 (4 findings), line 131 (9 findings), line 138 (5 findings), line 158 (5 findings)
+exit 153
