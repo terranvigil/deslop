@@ -14,7 +14,7 @@ prose easy to spot and rewrites them. It has three parts:
 3. Evals: dirty fixtures have to improve while clean fixtures and pre-LLM
    human writing stay clean.
 
-The goal is prose a skilled reader doesn't wince at, not detector evasion.
+The goal is prose a skilled reader doesn't wince at.
 
 ## Install
 
