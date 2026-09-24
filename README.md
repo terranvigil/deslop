@@ -1,7 +1,7 @@
 # deslop
 
-A Claude Code skill, `humanize-writing`, that finds the habits that make AI
-prose easy to spot and rewrites them. It has three parts:
+A Claude Code skill `humanize-writing`, alias `deslop` that detects AI
+prose and rewrites them. It has three parts:
 
 1. A detector: deterministic Python that flags spans by rule and by layer
    (lexical, structural, grammatical, discourse) and scores the document.
@@ -11,10 +11,9 @@ prose easy to spot and rewrites them. It has three parts:
 2. A fixer: the skill's workflow. Claude rewrites only the flagged spans
    and checks that every number, date, URL and quote survived. It stops
    after three passes.
-3. Evals: dirty fixtures have to improve while clean fixtures and pre-LLM
+3. Evals: checks that dirty fixtures improve while clean fixtures and pre-LLM
    human writing stay clean.
-
-The goal is prose a skilled reader doesn't wince at.
+4. Optionally logs findings, can be used to improve training.
 
 ## Install
 
@@ -41,7 +40,7 @@ It should print one finding per line. If it picks up the wrong Python, set
 ## Use
 
 In any Claude Code session, ask for it in plain words ("humanize
-docs/design.md", "make this PR description sound less like AI") or call it
+design.md", "make this PR description sound less like AI") or call it
 directly:
 
 ```
