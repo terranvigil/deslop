@@ -38,9 +38,10 @@ class Finding:
 
 
 class Detector:
-    def __init__(self, src: str, config: dict | None = None):
+    def __init__(self, src: str, config: dict | None = None, pr: bool = False):
         self.doc = Doc(src)
         self.config = config or {}
+        self.pr = pr  # also run the PR-description checks in pr.py
         self.findings: list[Finding] = []
         self._compiled = [(rid, layer, sev, label, fix, re.compile(pat, flags), scope)
                           for rid, layer, sev, label, fix, pat, flags, scope in R.PATTERNS]
@@ -335,7 +336,7 @@ class Detector:
         for b in self.doc.blocks:
             if b.kind not in ("paragraph", "item"):
                 continue
-            hits = [f for f in self.findings if b.start <= f.start < b.end and f.rule not in ("authorless", "no-hedges", "flat-rhythm", "dash-budget", "participial-rate")]
+            hits = [f for f in self.findings if b.start <= f.start < b.end and f.rule not in ("authorless", "no-hedges", "flat-rhythm", "dash-budget", "participial-rate", "pr-length", "pr-number-dense")]
             if len(hits) >= need:
                 out.append({"line": b.line, "findings": len(hits), "rules": sorted({f.rule.split(":")[0] for f in hits})})
         return out
@@ -346,6 +347,9 @@ class Detector:
         self.run_patterns()
         self.run_document()
         self.run_metrics()
+        if self.pr:
+            from . import pr as PR
+            PR.run(self)
         if self.config:
             self.findings = [f for f in self.findings if not P.suppressed(f.rule, self.config)]
         self.findings.sort(key=lambda f: (f.line, f.start, f.rule))
@@ -391,15 +395,16 @@ def main(argv=None):
         from .diff import main as diff_main
         return diff_main(argv)
     as_json = "--json" in argv
+    as_pr = "--pr" in argv
     args = [a for a in argv if not a.startswith("--")]
     if len(args) != 1:
-        print("usage: python3 -m deslop [--json] <file>", file=sys.stderr)
+        print("usage: python3 -m deslop [--json] [--pr] <file>", file=sys.stderr)
         return 255
     try:
         src = open(args[0], encoding="utf-8", errors="replace").read()
     except OSError:
-        print("usage: python3 -m deslop [--json] <file>", file=sys.stderr)
+        print("usage: python3 -m deslop [--json] [--pr] <file>", file=sys.stderr)
         return 255
-    det = Detector(src, P.load_config(P.find_config(args[0]))).run()
+    det = Detector(src, P.load_config(P.find_config(args[0])), pr=as_pr).run()
     sys.stdout.write(det.as_json() + "\n" if as_json else det.as_text())
     return min(255, len(det.findings))

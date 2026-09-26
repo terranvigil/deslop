@@ -398,10 +398,10 @@ FACT_DENSE_PER_100W = 25
 FIX_SCOPE = {
     "paragraph": {"monotone-rhythm", "fresh-subjects", "number-dense-sentence", "number-dense-paragraph",
                   "fact-dense-paragraph",
-                  "symmetric-bullets", "italic-subtitle"},
+                  "symmetric-bullets", "italic-subtitle", "pr-results-table", "pr-untracked-open-item"},
     "document": {"colon-splice", "semicolon-chain", "authorless", "no-hedges", "flat-rhythm", "dash-budget",
                  "participial-rate", "even-section-weight", "thematic-breaks", "rule-of-three",
-                 "contrast-habit", "name-drift", "overused", "llm-adverb"},
+                 "contrast-habit", "name-drift", "overused", "llm-adverb", "pr-length", "pr-number-dense"},
 }
 
 

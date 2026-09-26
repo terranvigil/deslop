@@ -196,6 +196,12 @@ the other.
       - Logs (3 Oct): https://logs.example.com/q/88
       - Related: [BK-2291](https://tracker.example.com/browse/BK-2291), [BK-2240](https://tracker.example.com/browse/BK-2240) (changed `send_window_min`)"
 23g. **Ticket links shown as URLs.** [structural] "Fixed in https://tracker.example.com/browse/BK-2291." A ticket reads as its id. Put the URL in the link target so only the id shows: "Fixed in [BK-2291](https://tracker.example.com/browse/BK-2291)." The same goes for GitHub issues and pull requests.
+
+23h. **PR as a war story.** [discourse] "We first sorted stalls by signup time, which broke on ties; after the review we switched to the vendor list and then found the page cached old draws." A reviewer needs where the change stands: "Assigns stalls from the office's vendor list and clears the page cache after each draw." The commits hold the path.
+
+23i. **Fact-filled PR.** [discourse] A description with per-week tables, every stall count from every trial draw and the timing of each run. Keep the figure a reviewer acts on: "All tests pass; three trial draws on last month's list matched the office's assignments." Link the rest.
+
+23j. **Untracked open items.** [discourse] A "Still open" list of work with no ticket behind it. Fix each item in the PR, drop the process steps, and file the real follow-ups: "Wednesday draws: [MKT-88](https://tracker.example.com/browse/MKT-88)." A limitation of the code stays as one line.
 24. **Tilde approximations.** [lexical] "~30%" in prose. "About" or the plain number, and sparingly.
 24a. **Dates and statuses baked into sentences.** [structural] Parenthetical dates and status tags sprinkled through prose read like a changelog bot and go stale the moment the ticket moves. They're especially common in ticket descriptions and status writeups. State the fact and link the ticket for its live status. Keep a date only when the date itself is the point.
     - Before: "The lane-closure form was rebuilt under PERMIT-77 [DONE] and the fee refund work (in progress) should wrap up by 2026-11-30."

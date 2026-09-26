@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # check_tells.sh - scan a prose file for mechanical AI tells.
 #
-# usage: check_tells.sh [--json] <file>
+# usage: check_tells.sh [--json] [--pr] <file>
 #        check_tells.sh --diff [--json] <original> <revised>
 #        check_tells.sh [--json] [--strict] --changed [base]
 # output: one line per finding: "line N: <tell> -> <fix>", or JSON with --json.
+#         --pr adds the PR-description checks (deslop/pr.py): a word budget,
+#         development history, number density, results tables, open items
+#         without a ticket.
 #         --diff prints only the findings the revision added, plus dropped
 #         facts (fact_lock.py's check) and the score before and after.
 #         --changed reports the findings added to each Markdown file changed

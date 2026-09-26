@@ -173,3 +173,24 @@ FILE_EXAMPLES = {
 
 # emitted only as a side effect of participial-rate firing; covered there
 DERIVED = {"participial-instance"}
+
+
+# --pr rules (deslop/pr.py): examples run with Detector(text, pr=True). the
+# clean one must fire nothing at all in that mode.
+PR_CLEAN = (
+    "## Summary\n\n"
+    "Saturday stalls now come from the vendor list the office keeps, so the lottery page shows who holds each corner.\n\n"
+    "## Testing\n\n"
+    "I ran the draw on last month's list and every vendor got the stall the office expected.\n"
+)
+
+
+def pr_examples() -> dict:
+    long_pr = "## Summary\n\n" + filler(330) + "\n"
+    return {
+        "pr-length": (long_pr, PR_CLEAN),
+        "pr-history": ("## Summary\n\nInitially the draw ran by hand.\n", PR_CLEAN),
+        "pr-number-dense": ("## Summary\n\nStalls 12, 14, 19 and 22 moved; 40 of 44 vendors kept a corner.\n", PR_CLEAN),
+        "pr-results-table": ("## Testing\n\n| Week | Stalls |\n|---|---|\n| First | Full |\n", PR_CLEAN),
+        "pr-untracked-open-item": ("## Still open\n\n- Moving the draw to Wednesday.\n", PR_CLEAN),
+    }

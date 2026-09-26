@@ -61,6 +61,8 @@ $CT README.md                 # every finding in one file
 $CT --json README.md          # spans, rule ids, severity, fix scope, score
 $CT --diff old.md new.md      # only what new.md added, plus dropped facts
 $CT --changed                 # new findings in Markdown changed since main
+$CT --pr pr.md                 # adds PR checks: length, history, figures, open items
+skill/scripts/diff_comments.py main > c.md && $CT c.md   # comments a branch adds
 ```
 
 The exit code is the number of findings. `--strict` makes `--changed` exit
