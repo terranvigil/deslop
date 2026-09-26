@@ -59,5 +59,6 @@ Expect the same counts or a change you meant to make, then re-record with
   a launch, and flattening it into a status line counts as a failure. At
   most one emoji, kept on purpose over the script's objection. The
   bold-label bullets become prose or a lumpy list. No sycophancy filler.
-- pr-description.md: headers are specific or absent. The generation times
+- pr-description.md: reads as where the change stands, in under about 250
+  words, with no "Introduction" or "Conclusion". Headers are specific or absent. The generation times
   survive. The closing paragraph makes one concrete claim or is cut.

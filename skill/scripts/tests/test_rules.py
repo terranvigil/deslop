@@ -21,7 +21,8 @@ sys.path.insert(0, HERE)
 from deslop import contrast as C  # noqa: E402
 from deslop import rules as R  # noqa: E402
 from deslop.detect import Detector  # noqa: E402
-from rule_examples import DERIVED, EXAMPLES, FILE_EXAMPLES, doc_examples  # noqa: E402
+from rule_examples import DERIVED, EXAMPLES, FILE_EXAMPLES, doc_examples, pr_examples  # noqa: E402
+from deslop import pr as PR  # noqa: E402
 
 TESTDATA = os.path.join(SCRIPTS, "testdata")
 
@@ -48,6 +49,31 @@ def all_examples() -> dict:
 
 def fired(text: str) -> set[str]:
     return {f.rule for f in Detector(text).run().findings}
+
+
+class PrRuleExamples(unittest.TestCase):
+    """the --pr rules, run in PR mode."""
+
+    def test_every_pr_rule_has_an_example(self):
+        src = open(os.path.join(SCRIPTS, "deslop", "pr.py"), encoding="utf-8").read()
+        emitted = set(re.findall(r'det\.add\("([a-z0-9-]+)"', src))
+        self.assertEqual(emitted, set(PR.RULES), "pr.RULES and pr.py's add() calls disagree")
+        self.assertEqual(sorted(set(PR.RULES) - set(pr_examples())), [], "--pr rules with no example")
+
+    def test_dirty_fires(self):
+        for rule, (dirty, _) in pr_examples().items():
+            with self.subTest(rule=rule):
+                self.assertIn(rule, {f.rule for f in Detector(dirty, pr=True).run().findings})
+
+    def test_clean_quiet(self):
+        for rule, (_, clean) in pr_examples().items():
+            with self.subTest(rule=rule):
+                self.assertEqual(sorted({f.rule for f in Detector(clean, pr=True).run().findings}), [])
+
+    def test_off_without_the_flag(self):
+        for rule, (dirty, _) in pr_examples().items():
+            with self.subTest(rule=rule):
+                self.assertNotIn(rule, fired(dirty))
 
 
 class RuleExamples(unittest.TestCase):
