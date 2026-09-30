@@ -273,6 +273,7 @@ asks for it. The report stays one or two lines.
 - [ ] Headers are specific, or there's no header
 - [ ] No appositive labels. Every heading, figure title and caption names its subject with words that could be spoken aloud, never two noun phrases joined by a comma ("One timetable, three campuses")
 - [ ] Nothing is defined by what it isn't ("it's X, not Y", "isn't X, it's Y", negated headings), and there's no manufactured foil in the affirmative forms either ("X rather than Y", "as opposed to Y"). A foil stays only when Y was a real option, a rejected decision, or a live misconception. When the source's own claim is a contrast, keep it once and state it plainly
+- [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
 - [ ] No sentence has a second fact hitched on by a comma (an appositive, "which means", "much like"). Each fact gets its own sentence while the long/short variation stays
 - [ ] At most one semicolon in the document

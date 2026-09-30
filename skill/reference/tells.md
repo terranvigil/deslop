@@ -312,6 +312,18 @@ as `throat-clearing`, `vague-quantity` and `hedge-stack`.
 31. **Knowledge-cutoff phrasing.** [lexical] "As of my last update", "details are not widely documented".
 32. **Placeholder leakage.** [lexical] "[Your Name]", unfilled template slots.
 
+33. **Correction residue.** [discourse] A document revised after a
+    correction keeps a denial of the old, wrong claim: "The SDK doesn't use
+    CBR" survives from a draft that said it did. A reader who never saw the
+    mistake meets an argument with nobody. When revising after a correction,
+    state only the current fact. Keep a negation only when a reader is likely
+    to hold the wrong belief independently (a live misconception, a rejected
+    option), not because an earlier draft or the conversation did.
+    - Before: "The SDK doesn't use NVENC's CBR mode. The picture uses VBR with the average and peak both set to 20 Mbps."
+    - After: "The picture uses NVENC's VBR mode with the average and peak both set to 20 Mbps."
+    - Before: "Segmentation: zstd per frame, not video."
+    - After: "Segmentation: zstd per frame."
+
 ## On the shelf life of this catalog
 
 Lexical tells decay from both ends. The 2023-24 vocabulary (delve, tapestry,
