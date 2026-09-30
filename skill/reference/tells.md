@@ -74,13 +74,14 @@ natural. Slack is the register the tell hides in, so it gets no exception.
    - Before: "Couriers open a locker by scanning its code with their phone, which means a flat battery stops the whole drop."
    - After: "Couriers open a locker by scanning its code with their phone. A flat battery stops the whole drop."
    - Keep the long/short variation the recipe asks for. When a sentence holds two facts, split that sentence and leave the others alone.
-8h. **Second clause joined by ", and", or by a bare "and".** [grammatical] Two facts in one sentence, joined by
-a comma and a conjunction. It's the written form of the "X, Y" habit. Split them, or make one the reason for
-the other.
+8h. **Second clause joined by ", and", ", but", ", so", or by a bare "and".** [grammatical] Two facts in one sentence, joined by
+a comma and a conjunction. It's the written form of the "X, Y" habit. Split them. ", so" counts too. Making one fact the other's consequence still packs two facts into one sentence.
    - Before: "Returns go through the front desk, and the drop box is emptied only on Mondays."
    - After: "Returns go through the front desk. The drop box is emptied only on Mondays."
    - Before: "Each allotment plot has its own water meter and we read them on the last Sunday of the month."
    - After: "Each allotment plot has its own water meter. We read them on the last Sunday of the month."
+   - Before: "A hard-compressed frame has lost detail, so a rising average warns that quality is slipping."
+   - After: "A hard-compressed frame has lost detail. A rising average means quality is slipping."
 
 8g. **Sing-song verb triple.** [structural] Three parallel verb phrases in one sentence,
    often with a rhythm to them: "weigh the next parcels, price the route,

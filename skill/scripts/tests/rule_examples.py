@@ -16,7 +16,7 @@ are built by the functions at the bottom.
 FILL = [
     "Saturday stalls get assigned by lottery on Thursday night.",
     "Nobody likes it.",
-    "I sat in on the draw twice this spring, once for the flower sellers and once for a cheese stand that kept losing its corner spot, so the complaints were about the rules themselves.",
+    "I sat in on the draw twice this spring, once for the flower sellers and once for a cheese stand that kept losing its corner spot. The complaints were about the rules themselves.",
     "Those rules date from before the website.",
     "If vendors ask again at the spring meeting, we'll probably move the draw to Wednesday.",
 ]
@@ -38,7 +38,7 @@ EXAMPLES = {
     # --- pattern rules, rules.PATTERNS ---------------------------------------
     "em-dash": ("Pickup moves to the side door — the front steps are being redone.", "Pickup moves to the side door while the front steps are redone."),
     "en-dash": ("Checkout opens at noon – two hours late.", "The lottery covers stalls 12-40."),
-    "spaced-hyphen": ("Swim lessons are full - try the Thursday class.", "Swim lessons are full, so try the Thursday class."),
+    "spaced-hyphen": ("Swim lessons are full - try the Thursday class.", "Swim lessons are full. Try the Thursday class."),
     "double-hyphen": ("The printer jammed--again.", "Pass --verbose to see each row."),
     "arrow": ("Book a slot → get a confirmation text.", "Booking a slot sends a confirmation text."),
     "arrow-other": ("Missed appointments ↓ since reminders started.", "Missed appointments went down once reminders started."),
@@ -179,7 +179,7 @@ DERIVED = {"participial-instance"}
 # clean one must fire nothing at all in that mode.
 PR_CLEAN = (
     "## Summary\n\n"
-    "Saturday stalls now come from the vendor list the office keeps, so the lottery page shows who holds each corner.\n\n"
+    "Saturday stalls now come from the vendor list the office keeps. The lottery page shows who holds each corner.\n\n"
     "## Testing\n\n"
     "I ran the draw on last month's list and every vendor got the stall the office expected.\n"
 )

@@ -14,7 +14,7 @@ Street. Each time, someone had to phone the customer, apologise, and offer a
 different loaf. Nobody enjoyed those calls.
 
 Printing the sheet later doesn't help. The rye needs a longer rest than
-anything else we bake, so the baker would be starting it with half the
+anything else we bake. The baker would be starting it with half the
 orders still unknown.
 
 ## The new cut-off
