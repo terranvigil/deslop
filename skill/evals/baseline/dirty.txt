@@ -74,7 +74,7 @@ line 59: banned word 'fights' -> fine for people; for tech say is a bad match fo
 line 59: scene-setting opener -> cut the opener; start with the point
 line 62: 'quietly' insight claim -> say who did what, with evidence
 line 63: unquantified intensifier -> give the number, or drop the adverb
-line 65: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 65: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 65: second clause joined by a bare "and" -> two facts in one sentence: split at the and, or make one the reason for the other
 line 65: banned word 'landed' -> fine only for things that physically land (aircraft, a plane, a probe); when work lands (a change, a migration, a PR, a fix) that is the tell: say shipped, is live, is in place, went out
 line 66: trailing participial clause -> end the sentence at the fact; say the consequence in its own sentence
@@ -103,7 +103,7 @@ line 94: manufactured foil ('as opposed to Y') -> state the positive claim; cut 
 line 94: manufactured foil ('X rather than Y') -> keep only if Y was genuinely on the table; otherwise state X alone
 line 98: second fact hitched on by a comma -> split it: the clause after the comma becomes its own sentence
 line 98: manufactured foil ('X rather than Y') -> keep only if Y was genuinely on the table; otherwise state X alone
-line 100: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 100: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 102: second clause joined by a bare "and" -> two facts in one sentence: split at the and, or make one the reason for the other
 line 104: contrast frame (np-be-not-sep-they-be) -> state the positive claim; drop the negated half
 line 108: banned phrase 'according to some' -> name the source, or cut it
@@ -125,7 +125,7 @@ line 120: banned phrase '[your name]' -> fill in the real value or delete the pl
 line 121: banned phrase '[insert' -> fill in the real value or delete the placeholder
 line 121: banned phrase 'i hope this helps' -> cut it
 line 125: pseudo-cleft reveal ('is what X') -> just say what it does
-line 125: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 125: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 126: banned phrase 'acts as' -> is
 line 126: banned phrase 'represents a' -> is a
 line 131: banned phrase 'on the one hand' -> cut the frame; state the position
@@ -133,12 +133,12 @@ line 132: banned word 'honestly' -> honesty is assumed in tech docs; state the l
 line 132: banned phrase 'it depends' -> say what it depends on, or commit
 line 132: banned phrase 'both approaches have' -> say which one you picked and why
 line 133: banned phrase 'there are trade-offs' -> name the actual trade-off, or commit
-line 133: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 133: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 133: banned phrase 'each has its merits' -> say which one you picked and why
 line 133: formulaic transition -> cut it, or use a plain link
 line 133: banned phrase 'ultimately, the choice' -> make the choice; say what you chose
 line 138: overused word 'substrate' (2 times) -> keep it where it's the established term; name the concrete thing elsewhere
-line 138: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 138: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 139: overused word 'rides' (2 times) -> keep it where it's the established term; name the concrete thing elsewhere
 line 140: overused word 'wedge' (2 times) -> keep it where it's the established term; name the concrete thing elsewhere
 line 140: banned word 'lands' -> fine only for things that physically land (aircraft, a plane, a probe); when work lands (a change, a migration, a PR, a fix) that is the tell: say shipped, is live, is in place, went out

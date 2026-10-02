@@ -17,6 +17,7 @@ Two modes:
   closing paragraph that only asserts significance can go, and so can an
   unsourced "industry reports suggest". Every fact, name, number and
   direction of change survives.
+  Table cells are prose too, so revise them with the rest.
   The stance rule below still applies, but a stance you add has to come from
   a commitment the document already makes. If it endorses an approach,
   say so in the author's own person. Don't attribute an opinion the text
@@ -122,8 +123,9 @@ Don't bolt on folksy filler to sound human. Match the document's job first
 and the voice profile second.
 
 Tickets and status writeups (Jira, Linear, GitHub issues) get their own
-shape. The story comes first, in plain prose: what's wrong or wanted, who
-it affects, and what done looks like. The specifics the story would
+shape. The story comes first, in plain prose: the symptom as a user or
+data consumer sees it, then in plain terms how the system works, what
+went wrong and what done looks like. The specifics the story would
 otherwise trip over go in a list at the end under a plain heading like
 "Details". That covers ticket keys, versions, config keys, hostnames,
 counts, dates and links. Move facts there. Don't drop them: every one in
@@ -143,15 +145,21 @@ what you cut in the report line.
 - **Current state only.** What the change does, why it's needed, how it
   was tested, and what a reviewer has to know. No bisect story, no review
   rounds, no "initially we tried". The commits hold the history.
-- **Short.** Aim for under 250 words and one screen. A two- or
-  three-sentence summary a newcomer can follow, then short sections:
-  Summary, Changes, Testing, and Limitations or Depends on only when they
-  apply. One line per change, saying what it does, not how.
-- **Plain words.** Lead with the effect a user or operator sees. Spell out
-  or skip jargon a teammate from another area wouldn't know.
+- **Story first, details last.** Same shape as a ticket. Open with the
+  symptom a user or operator sees. Then, in plain terms, say how the
+  system works, what went wrong and what the change does, naming things
+  by what they do. Short Testing and Depends on or Not in this PR
+  sections follow when they apply. File and function names, config keys,
+  counts and commands go in a Details list at the end. A story paragraph
+  or a bullet full of `code` references reads as a changelog, so move the
+  identifiers down.
+- **Short.** The story and its sections fit on one screen, under about
+  250 words. The Details list doesn't count toward that.
+- **Plain words.** Spell out or skip jargon a teammate from another area
+  wouldn't know.
 - **Few figures.** Keep the one or two a reviewer acts on, like tests
-  passing or the headline result. Per-run tables, logs and measurements go
-  in a linked doc or nowhere.
+  passing or the headline result, in the story. The rest go in Details.
+  Per-run tables and logs go in a linked doc or nowhere.
 - **Audit every open item.** For each "open", "todo", "known gap" or
   "follow-up" item, fix it in this PR if you can. Drop it if it's a process
   step such as a deploy or moving a card. If it's real follow-up work, it
@@ -166,8 +174,9 @@ what you cut in the report line.
   why.
 
 Run the description through `check_tells.sh --pr <file>`, which adds a word
-budget, history phrases, number density, results tables and untracked open
-items to the usual checks. For the rest of the PR:
+budget, history phrases, number density, results tables, untracked open
+items and code-dense story paragraphs to the usual checks. A section
+headed Details is left out of the budget, the density and the code count. For the rest of the PR:
 
 - `scripts/diff_comments.py <base> > comments.md`, then
   `check_tells.sh comments.md`, checks the comments the branch adds.
@@ -260,7 +269,9 @@ items to the usual checks. For the rest of the PR:
 Walk each item. Don't paste the list into your response unless the user
 asks for it. The report stays one or two lines.
 
-- [ ] PR descriptions: current state only, under about 250 words, readable by a newcomer, one or two figures, every open item fixed, dropped or ticketed
+- [ ] PR descriptions and tickets: symptom first, then a plain-terms story; identifiers and figures in Details at the end
+- [ ] PR descriptions: current state only, story under about 250 words, readable by a newcomer, one or two figures, every open item fixed, dropped or ticketed
+- [ ] Table cells got the same pass as the prose, with their facts kept
 - [ ] Sentence lengths vary with no run of same-shape sentences. Consecutive sentences don't all open with fresh bare subjects
 - [ ] Bullets only where content has parts, with lumpy items instead of symmetric ones
 - [ ] The document commits to something. No balanced both-sidesing

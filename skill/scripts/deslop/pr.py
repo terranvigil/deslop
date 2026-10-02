@@ -7,6 +7,8 @@ fine in a design doc or a postmortem.
 """
 import re
 
+from .text import INLINE_CODE
+
 # a description past this many words stops being read in full
 WORD_BUDGET = 300
 # numbers per 100 words; a description that reads like a results table
@@ -23,13 +25,30 @@ HISTORY = re.compile(
 OPEN_HEADING = re.compile(r"\b(?:open(?: items| questions)?|still open|to ?do|follow[- ]?ups?|next steps|known (?:gaps|issues)|remaining)\b", re.I)
 TICKET = re.compile(r"\b[A-Z][A-Z0-9]+-\d+\b|#\d+\b|https?://\S+")
 NUMBER = re.compile(r"(?<![\w.])\d[\d,.]*%?")
+# the list at the end that holds identifiers and figures, out of the story's way
+DETAILS_HEADING = re.compile(r"^#+\s*details\b", re.I)
+# `code` references in one story paragraph or bullet past which it reads as a changelog
+CODE_REFS = 3
 
-RULES = ("pr-length", "pr-history", "pr-number-dense", "pr-results-table", "pr-untracked-open-item")
+RULES = ("pr-length", "pr-history", "pr-number-dense", "pr-results-table", "pr-untracked-open-item",
+         "pr-code-dense")
+
+
+def _in_details(d) -> list[bool]:
+    """per block: does it sit under a Details heading."""
+    out, inside = [], False
+    for b in d.blocks:
+        if b.kind == "heading":
+            inside = bool(DETAILS_HEADING.match(d.src[b.start:b.end]))
+        out.append(inside and b.kind != "heading")
+    return out
 
 
 def run(det) -> None:
     d = det.doc
-    words = d.words()
+    details = _in_details(d)
+    story = " ".join(b.text for b, inside in zip(d.blocks, details) if not inside)
+    words = d.words(story)
     if words > WORD_BUDGET:
         det.add("pr-length", "discourse", 2,
                 f"PR description is {words} words; a reviewer reads about {WORD_BUDGET}",
@@ -40,7 +59,7 @@ def run(det) -> None:
             det.add("pr-history", "discourse", 2, f"development history in a PR ('{m.group(0)}')",
                     "state the current behaviour; the history lives in the commits", b.start + m.start(),
                     b.start + m.end(), m.group(0))
-    numbers = len(NUMBER.findall(TICKET.sub(" ", d.cleaned)))
+    numbers = len(NUMBER.findall(TICKET.sub(" ", story)))
     if words and numbers * 100 / words > NUMBER_DENSITY:
         det.add("pr-number-dense", "discourse", 2,
                 f"PR description carries {numbers} numbers in {words} words",
@@ -60,3 +79,11 @@ def run(det) -> None:
             det.add("pr-untracked-open-item", "discourse", 2, "open item with no ticket",
                     "resolve it in this PR, drop it if it's a process step, or file it and link the id",
                     b.start, b.end, b.text[:60])
+    for b, inside in zip(d.blocks, details):
+        if inside or b.kind not in ("paragraph", "item"):
+            continue
+        refs = len(INLINE_CODE.findall(d.src[b.start:b.end]))
+        if refs >= CODE_REFS:
+            det.add("pr-code-dense", "structural", 2, f"{refs} code references in one story paragraph or bullet",
+                    "say what each thing does in plain words; move the names to a Details list at the end",
+                    b.start, b.end, d.src[b.start:b.end][:60])
