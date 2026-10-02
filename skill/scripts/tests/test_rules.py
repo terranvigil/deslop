@@ -21,7 +21,7 @@ sys.path.insert(0, HERE)
 from deslop import contrast as C  # noqa: E402
 from deslop import rules as R  # noqa: E402
 from deslop.detect import Detector  # noqa: E402
-from rule_examples import DERIVED, EXAMPLES, FILE_EXAMPLES, doc_examples, pr_examples  # noqa: E402
+from rule_examples import DERIVED, EXAMPLES, FILE_EXAMPLES, PR_CLEAN, doc_examples, pr_examples  # noqa: E402
 from deslop import pr as PR  # noqa: E402
 
 TESTDATA = os.path.join(SCRIPTS, "testdata")
@@ -69,6 +69,11 @@ class PrRuleExamples(unittest.TestCase):
         for rule, (_, clean) in pr_examples().items():
             with self.subTest(rule=rule):
                 self.assertEqual(sorted({f.rule for f in Detector(clean, pr=True).run().findings}), [])
+
+    def test_details_list_is_outside_the_budget(self):
+        details = "\n## Details\n\n" + "".join(f"- Stall {i} moved to row {i + 1}.\n" for i in range(60))
+        rules = {f.rule for f in Detector(PR_CLEAN + details, pr=True).run().findings}
+        self.assertFalse(rules & {"pr-length", "pr-number-dense"}, rules)
 
     def test_off_without_the_flag(self):
         for rule, (dirty, _) in pr_examples().items():

@@ -193,4 +193,8 @@ def pr_examples() -> dict:
         "pr-number-dense": ("## Summary\n\nStalls 12, 14, 19 and 22 moved; 40 of 44 vendors kept a corner.\n", PR_CLEAN),
         "pr-results-table": ("## Testing\n\n| Week | Stalls |\n|---|---|\n| First | Full |\n", PR_CLEAN),
         "pr-untracked-open-item": ("## Still open\n\n- Moving the draw to Wednesday.\n", PR_CLEAN),
+        "pr-code-dense": (
+            "## Summary\n\n`draw_stalls` now reads `vendors.csv` and writes `corners.json`.\n",
+            PR_CLEAN + "\n## Details\n\n- `draw_stalls` reads `vendors.csv` and writes `corners.json`.\n",
+        ),
     }
