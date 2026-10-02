@@ -23,7 +23,7 @@ line 13: bold label -> make it prose or a real heading
 line 13: negative parallelism -> state it directly
 line 14: bold label -> make it prose or a real heading
 line 14: banned word 'pivotal' -> important, central
-line 14: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 14: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 16: cliche header -> specific title or no header
 line 18: banned phrase 'despite these challenges' -> cut the frame; state the open problems
 line 18: banned phrase 'the path forward' -> say what you'll do next

@@ -16,7 +16,7 @@ line 11: banned word 'bolstered' -> rewrite without it
 line 11: banned word 'leveraging' -> rewrite without it
 line 11: banned word 'comprehensive' -> full, complete
 line 11: banned word 'underscores' -> show, make clear
-line 11: second clause joined by ", and" -> two facts in one sentence: split at the comma, or subordinate one with because/so/which
+line 11: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 11: banned word 'facilitates' -> help
 line 11: banned word 'seamless' -> rewrite without it
 clusters: line 3 (3 findings), line 5 (3 findings), line 7 (3 findings), line 11 (8 findings)
