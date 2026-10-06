@@ -95,6 +95,7 @@ EXAMPLES = {
     "formulaic-transition-2": ("Consequently, the draw moved to Wednesday.", "The draw moved to Wednesday."),
     "model-residue": ("Opening hours are listed below.:contentReference[oaicite:2]{index=2}", "Opening hours are listed below."),
     "hitched-comma": ("The van broke down, something that happens every winter.", "The van broke down again this winter."),
+    "hitched-purpose": ("We timed every stall setup on Saturday, to see whether the new layout saves time.", "We timed every stall setup on Saturday. The new layout saved no time."),
     "comma-and-clause": ("Classes start at nine, but most kids arrive early.", "Most kids arrive before classes start at nine."),
     "hitched-with": ("The market opened, with one stall still setting up.", "The market opened while one stall was still setting up."),
     "bare-and-clause": ("Parents book online and they get a text the day before.", "Parents who book online get a text the day before."),
