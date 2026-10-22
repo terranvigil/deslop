@@ -271,6 +271,7 @@ PATTERNS = [
     ("aphoristic-echo", "structural", 2, "aphoristic echo sentence", "cut it, or merge the point into the previous sentence", r"\. That (takes|is|was|does|means) [a-z']+\.", 0, "block"),
     ("formulaic-transition", "structural", 2, "formulaic transition", "cut it, or use a plain link", SS + r"(Additionally|Moreover|Furthermore),", 0, "block"),
     ("tilde", "lexical", 1, "tilde approximation", "'about' or the plain number", r"~[0-9]", 0, "block"),
+    ("colon-title", "structural", 2, "slogan: subtitle heading", "drop the slogan half; name the subject plainly", r"^#{1,6} [^:\n]{2,40}: \S", 0, "heading"),
     ("cliche-header", "structural", 2, "cliche header", "specific title or no header", r"^#{1,6} +(overview|key takeaways?|next steps|what changed|conclusion|final thoughts|(challenges and )?future outlook|key statistics|introduction)\s*$", I, "heading"),
     ("how-we-header", "structural", 2, "how-we header", "name the actual content; specific title or no header", r"^#{1,6} +(how (we|i)|the (road|journey) to)\b", I, "heading"),
     ("date-in-prose", "structural", 1, "date in prose", "drop the date; state the fact or link the ticket", r"\b(19|20)[0-9]{2}-[0-1][0-9]-[0-3][0-9]\b", 0, "block"),
