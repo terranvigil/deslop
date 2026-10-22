@@ -86,6 +86,9 @@ a comma and a conjunction. It's the written form of the "X, Y" habit. Split them
    - After: "Each allotment plot has its own water meter. We read them on the last Sunday of the month."
    - Before: "A hard-compressed frame has lost detail, so a rising average warns that quality is slipping."
    - After: "A hard-compressed frame has lost detail. A rising average means quality is slipping."
+   - An imperative hitched on with ", and" is the same habit: a thank-you or statement, then a request in the same sentence (comma-and-imperative).
+   - Before: "Shout-out to the whole crew, and ping me with any questions!"
+   - After: "Shout-out to the whole crew! Ping me with any questions."
 
 8g. **Sing-song verb triple.** [structural] Three parallel verb phrases in one sentence,
    often with a rhythm to them: "weigh the next parcels, price the route,

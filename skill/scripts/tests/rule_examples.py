@@ -99,6 +99,7 @@ EXAMPLES = {
     "comma-and-clause": ("Classes start at nine, but most kids arrive early.", "Most kids arrive before classes start at nine."),
     "hitched-with": ("The market opened, with one stall still setting up.", "The market opened while one stall was still setting up."),
     "colon-title": ("## Lottery day: how stalls get assigned", "## How stalls get assigned"),
+    "comma-and-imperative": ("Thanks to everyone who helped set up, and ping me if a stall is missing.", "Thanks to everyone who helped set up. Ping me if a stall is missing."),
     "hitched-which": ("The stall fee rose in May, which gave the flower sellers a shock.", "The stall fee rose in May. The flower sellers were surprised."),
     "hitched-participle": ("The lottery runs on Thursday night, checked against last month's waiting list.", "The lottery runs on Thursday night. Staff check it against last month's waiting list."),
     "hitched-while": ("The cheese stand sold out by ten, while the bakery still had bread at noon.", "The cheese stand sold out by ten. The bakery still had bread at noon."),
