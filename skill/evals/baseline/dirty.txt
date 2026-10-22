@@ -3,6 +3,7 @@ line 3: italic subtitle under title -> fold it into the opening paragraph
 line 5: banned phrase 'it's important to note' -> cut it; say the thing
 line 5: data in parentheses -> weave it in, or give it its own sentence
 line 6: banned word 'leverage' -> use
+line 6: second fact hitched on with ", which" -> split it: the which-clause becomes its own sentence
 line 6: banned word 'robust' -> solid, reliable
 line 7: bold label -> make it prose or a real heading
 line 7: em dash -> hyphen, comma, or two sentences
@@ -67,6 +68,7 @@ line 53: false-suspense transition -> cut the tease; say the thing
 line 54: self-posed question -> state the answer as a sentence
 line 54: fake-candid opener -> cut it; performed candor is its own tell
 line 56: pedagogical hand-holding -> explain the mechanism instead of announcing that you will
+line 56: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
 line 56: second clause joined by a bare "and" -> two facts in one sentence: split at the and, or make one the reason for the other
 line 56: pedagogical hand-holding -> explain the mechanism instead of announcing that you will
 line 59: invented persona -> use a real case from the source material, or cut the example
@@ -151,5 +153,5 @@ line 158: throat-clearing preamble -> cut it; say the thing
 line 159: vague quantity filler -> name them, give the count, or cut the phrase
 line 160: throat-clearing preamble -> cut it; say the thing
 line 161: hedge stack (4 hedges in one sentence) -> keep the one hedge the uncertainty needs, or commit
-clusters: line 5 (4 findings), line 7 (3 findings), line 9 (41 findings), line 36 (5 findings), line 42 (4 findings), line 45 (3 findings), line 53 (3 findings), line 56 (3 findings), line 59 (3 findings), line 65 (6 findings), line 69 (12 findings), line 93 (4 findings), line 108 (7 findings), line 114 (4 findings), line 118 (7 findings), line 125 (4 findings), line 131 (9 findings), line 138 (5 findings), line 158 (5 findings)
-exit 153
+clusters: line 5 (5 findings), line 7 (3 findings), line 9 (41 findings), line 36 (5 findings), line 42 (4 findings), line 45 (3 findings), line 53 (3 findings), line 56 (4 findings), line 59 (3 findings), line 65 (6 findings), line 69 (12 findings), line 93 (4 findings), line 108 (7 findings), line 114 (4 findings), line 118 (7 findings), line 125 (4 findings), line 131 (9 findings), line 138 (5 findings), line 158 (5 findings)
+exit 155

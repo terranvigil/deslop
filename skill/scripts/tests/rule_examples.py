@@ -99,6 +99,9 @@ EXAMPLES = {
     "comma-and-clause": ("Classes start at nine, but most kids arrive early.", "Most kids arrive before classes start at nine."),
     "hitched-with": ("The market opened, with one stall still setting up.", "The market opened while one stall was still setting up."),
     "colon-title": ("## Lottery day: how stalls get assigned", "## How stalls get assigned"),
+    "hitched-which": ("The stall fee rose in May, which gave the flower sellers a shock.", "The stall fee rose in May. The flower sellers were surprised."),
+    "hitched-participle": ("The lottery runs on Thursday night, checked against last month's waiting list.", "The lottery runs on Thursday night. Staff check it against last month's waiting list."),
+    "hitched-while": ("The cheese stand sold out by ten, while the bakery still had bread at noon.", "The cheese stand sold out by ten. The bakery still had bread at noon."),
     "bare-and-clause": ("Parents book online and they get a text the day before.", "Parents who book online get a text the day before."),
     "throat-clearing": ("I just wanted to let everyone know the pool is closed Monday.", "The pool is closed Monday."),
     "vague-quantity": ("Most of the complaints were resolved in many of the cases.", "Staff resolved most of the complaints within a week."),
@@ -118,7 +121,7 @@ EXAMPLES = {
     "semicolon-chain": ("Refunds take a week; exchanges are same day. Gift cards never expire; store credit does.", "Refunds take a week. Exchanges happen the same day."),
     "name-drift": ("Staff edit pickupWindow in the admin page. The locker app reads PickupWindow at startup.", "Staff edit pickupWindow in the admin page. The locker app reads it at startup."),
     "appositive-heading:caption": ("**Lockers, by neighborhood**", "**Lockers by neighborhood**"),
-    "symmetric-bullets": ("- **When:** Saturday mornings.\n- **Where:** the church hall.\n- **Cost:** free for members.", "- Saturday mornings\n- in the church hall, which has parking out back\n- free for members"),
+    "symmetric-bullets": ("- **When:** Saturday mornings.\n- **Where:** the church hall.\n- **Cost:** free for members.", "- Saturday mornings\n- in the church hall, parking out back\n- free for members"),
     # --- families -------------------------------------------------------------
     "word:leverage": ("We leverage the waitlist to fill cancellations.", "The clinic fills cancellations from its waitlist."),
     "word:robust": ("The kiosk needs a robust paper feed.", "The kiosk needs a paper feed that doesn't jam."),
