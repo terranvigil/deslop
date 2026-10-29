@@ -17,6 +17,7 @@ from . import rules as R
 from . import contrast as C
 from . import metrics as M
 from . import project as P
+from . import text as T
 from .text import Doc, Block, sentences, sentence_lengths
 
 
@@ -97,6 +98,17 @@ class Detector:
                     self.add("contrast:" + name, "structural", 2, f"contrast frame ({name})", "state the positive claim; drop the negated half", s0, e0, m.group(0)[:80])
         self.scan(d.blocks, R.QUANT_TAIL, "quantifier-tail", "structural", 2, "quantifier appositive tail",
                   "give it a verb or its own clause, not a tacked-on ', both/each/all X'", exclude=R.QUANT_TAIL_EXCLUDE)
+        # file paths shown as code in running prose, outside fenced blocks
+        off, fenced = 0, False
+        for line in d.src.split("\n"):
+            if T.FENCE.match(line.strip()):
+                fenced = not fenced
+            elif not fenced:
+                for m in R.CODE_PATH.finditer(line):
+                    self.add("code-path-text", "structural", 1, "file path shown as code",
+                             "name the file by what it holds and link it: [stall map](url)",
+                             off + m.start(), off + m.end(), m.group(0))
+            off += len(line) + 1
         # italic subtitle: first non-blank line after an H1 that is wrapped in * or _
         cleaned_lines = d.cleaned.split("\n")
         prev = ""

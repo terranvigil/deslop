@@ -411,6 +411,10 @@ FACT_DENSE_PER_100W = 25
 # paragraph or list restructured; "document" is a count or rate across the
 # whole file, so no single edit clears it. anything not listed is
 # "sentence". families (overused:, llm-adverb:) match on the prefix.
+# a file path quoted as code in a sentence. inline code is blanked before the
+# pattern rules run, so detect.py matches this on the source.
+CODE_PATH = re.compile(r"`[\w.-]*/[\w./-]*\.[A-Za-z]{1,5}`")
+
 FIX_SCOPE = {
     "paragraph": {"monotone-rhythm", "fresh-subjects", "number-dense-sentence", "number-dense-paragraph",
                   "fact-dense-paragraph",
