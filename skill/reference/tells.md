@@ -210,6 +210,13 @@ a comma and a conjunction. It's the written form of the "X, Y" habit. Split them
 23i. **Fact-filled PR.** [discourse] A description with per-week tables, every stall count from every trial draw and the timing of each run. Keep the figure a reviewer acts on: "All tests pass; three trial draws on last month's list matched the office's assignments." Link the rest.
 
 23j. **Untracked open items.** [discourse] A "Still open" list of work with no ticket behind it. Fix each item in the PR, drop the process steps, and file the real follow-ups: "Wednesday draws: [MKT-88](https://tracker.example.com/browse/MKT-88)." A limitation of the code stays as one line.
+23k. **Example piles.** [discourse] "A stall can sell produce, such as apples, pears, plums or quinces." One example lands. Three or four is a list the reader skims past. Give one, or none when the term is plain.
+    - Before: "Vendors bring fixtures such as tables, awnings, crates and chalkboards."
+    - After: "Vendors bring their own fixtures, down to the awning."
+23l. **Identifiers in explanatory prose.** [structural] Enum values, record ids, field names and file names quoted into a sentence that's explaining something. The reader has to decode each one. Name the thing by what it does. Keep an identifier only when the reader has to type or search for it, and then once.
+    - Before: "Each stall is a `StallSlot` row in `stalls.db`, with `kind=2` for food and `kind=3` for crafts."
+    - After: "Each stall is a row in the market database, with a flag for food or crafts."
+23m. **Paths and URLs as link text.** [structural] "The layout is in `docs/stall-map.md`", or a bare URL in a sentence. Name the target and hide the address in the link: "The [stall map](https://market.example.com/stall-map) has the layout." This is 23g for every link, not just tickets.
 24. **Tilde approximations.** [lexical] "~30%" in prose. "About" or the plain number, and sparingly.
 24a. **Dates and statuses baked into sentences.** [structural] Parenthetical dates and status tags sprinkled through prose read like a changelog bot and go stale the moment the ticket moves. They're especially common in ticket descriptions and status writeups. State the fact and link the ticket for its live status. Keep a date only when the date itself is the point.
     - Before: "The lane-closure form was rebuilt under PERMIT-77 [DONE] and the fee refund work (in progress) should wrap up by 2026-11-30."

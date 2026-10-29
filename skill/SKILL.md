@@ -122,6 +122,21 @@ does. The discipline is selection, not deletion.
   you're revising and the source never had one. Leave it unquantified and
   say so, or ask. Never supply the figure yourself.
 
+## Examples and identifiers in prose
+
+Explanatory prose names things by what they do. Each quoted string, example
+and figure is something the reader has to stop and decode.
+
+- One example per point, or none when the term is plain. "Such as A, B or
+  C" is a list the reader skims.
+- Keep code strings, enum values, record ids and file names out of
+  sentences. Say what the thing is. Keep an identifier only when the reader
+  has to type or search for it, and then once.
+- Every link shows a name. The address goes in the link target: "the
+  [capture data contract](url)", never a path or URL as the visible text.
+- In a doc that explains, keep only the figures a reader acts on. The rest
+  belong in the source the doc links to.
+
 ## Register
 
 Humanized means authored, not casual. A design doc stays technical, a Slack
@@ -297,6 +312,7 @@ asks for it. The report stays one or two lines.
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
 - [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Each fact gets its own sentence while the long/short variation stays
 - [ ] At most one semicolon in the document
+- [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL
 - [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded in prose, not restated from a table
 - [ ] Every claim of change has exactly one number. The figures a claim rests on are still exact
 - [ ] No trailing participial clause (", ensuring X", ", highlighting Y")
