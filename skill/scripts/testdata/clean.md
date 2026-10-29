@@ -10,7 +10,7 @@ The ovens start at four in the morning. Whoever opens up prints the order
 sheet at half past three and portions the dough from it. Anything ordered
 after the sheet came off the printer got missed, which last month happened
 on about one morning in five, mostly after late orders from the café on Mill
-Street. Each time, someone had to phone the customer, apologise, and offer a
+Street. Each time, someone had to phone the customer, apologize, and offer a
 different loaf. Nobody enjoyed those calls.
 
 Printing the sheet later doesn't help. The rye needs a longer rest than

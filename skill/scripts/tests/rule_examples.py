@@ -63,6 +63,7 @@ EXAMPLES = {
     "self-restatement": ("Returns close at five. Put another way, use the drop box after that.", "Use the drop box after five."),
     "aphoristic-echo": ("Every tray gets weighed twice. That was new.", "Weighing every tray twice started this month."),
     "formulaic-transition": ("Furthermore, the pool closes at eight.", "The pool also closes at eight."),
+    "british-spelling": ("The colour labels are organised by stall.", "The color labels are organized by stall."),
     "tilde": ("The walk takes ~15 minutes.", "The walk takes about 15 minutes."),
     "cliche-header": ("## Conclusion", "## Where the waitlist stands"),
     "how-we-header": ("## The road to a shorter queue", "## Queue length since March"),

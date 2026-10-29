@@ -71,6 +71,8 @@ checking only the prose a branch changed, allowing a repo's jargon
    "X1 does Y1. X2 does Y2." rows, each opening a fresh subject, is a list
    wearing paragraph clothes. Thread it (subordinate, connect, lead with
    the point the facts support) or make it a real list.
+12. **American spelling.** Color, labeled, behavior, center, organize. British
+   spellings in US-English prose read as generated.
 
 ## Numbers
 

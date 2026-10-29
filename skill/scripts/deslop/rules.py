@@ -270,6 +270,13 @@ PATTERNS = [
     ("self-restatement", "discourse", 2, "self-restatement marker", "say it once, in the better version", r"\b(in other words|put another way|to put it another way|that is to say|which is to say|or rather,)\b", I, "block"),
     ("aphoristic-echo", "structural", 2, "aphoristic echo sentence", "cut it, or merge the point into the previous sentence", r"\. That (takes|is|was|does|means) [a-z']+\.", 0, "block"),
     ("formulaic-transition", "structural", 2, "formulaic transition", "cut it, or use a plain link", SS + r"(Additionally|Moreover|Furthermore),", 0, "block"),
+    # british spellings read as model output in US-English prose. listed
+    # stems, not a generic -ise ending, which would hit "promise" and "wise".
+    ("british-spelling", "lexical", 1, "British spelling", "US spelling: color, labeled, behavior, center, organize, analyze",
+     r"\b(colour(s|ed|ing|ful)?|favour\w*|behaviour\w*|honour\w*|flavour\w*|neighbour\w*|labour\w*|"
+     r"labell(ed|ing)|modell(ed|ing)|travell(ed|ing|er)|signall(ed|ing)|centre[sd]?|grey|catalogue[sd]?|programme[sd]?|defence|"
+     r"(organ|recogn|real|optim|minim|maxim|normal|serial|initial|summar|priorit|custom|final|visual|util|standard|synchron|author|categor|emphas|apolog|special|stabil)is(e[sd]?|ing|ation|ations)|"
+     r"analys(e|ed|ing))\b", I, "block"),
     ("tilde", "lexical", 1, "tilde approximation", "'about' or the plain number", r"~[0-9]", 0, "block"),
     ("colon-title", "structural", 2, "slogan: subtitle heading", "drop the slogan half; name the subject plainly", r"^#{1,6} [^:\n]{2,40}: \S", 0, "heading"),
     ("cliche-header", "structural", 2, "cliche header", "specific title or no header", r"^#{1,6} +(overview|key takeaways?|next steps|what changed|conclusion|final thoughts|(challenges and )?future outlook|key statistics|introduction)\s*$", I, "heading"),
