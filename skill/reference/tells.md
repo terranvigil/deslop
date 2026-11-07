@@ -277,6 +277,15 @@ reference to shared context ("since the incident last month"), a dependency
 quirk noted in passing, an estimate that is round because nobody measured
 it. Don't manufacture these, but don't sand them out of a draft either.
 
+27l. **Counted structure.** [structural] A sentence announces a tally ("Late
+returns hurt the branch in three ways") and later sentences walk it with
+ordinals ("The third cost is..."). It's slide-deck scaffolding in a
+paragraph. Name the items and let the reader count. No regex catches it
+cleanly: "ran it three times. The third run" and "the fourth quarter" are
+ordinary prose with the same shape. It stays a judgment call.
+   - Before: "Late returns hurt the branch in three ways. They block holds. They tie up the desk. The third cost is the fines nobody pays."
+   - After: "Late returns block holds and tie up the desk. Nobody pays the fines on them."
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they
