@@ -76,7 +76,7 @@ natural. Slack is the register the tell hides in, so it gets no exception.
    - Keep the long/short variation the recipe asks for. When a sentence holds two facts, split that sentence and leave the others alone.
    - The same habit shows up as ", which has/is/includes", ", with the X and Y", ", while ..." and a past participle such as ", checked against". Each tacks a second fact onto the first. The detector catches the common forms as hitched-which, hitched-with, hitched-while and hitched-participle.
    - Before: "The three numbers the ticket asks for, checked against current code and data on 22 October, with the poster text and figure for Godeffroy."
-   - After: "The ticket asks for three numbers. I checked each one against current code and data on 22 October. The poster text and figure follow."
+   - After: "The ticket asks for three numbers. All three are current as of 22 October. The poster text and figure follow."
    - A test for your own drafts: if a sentence has two or more commas and they don't separate items in a list, it's carrying more than one fact. Split it.
 8h. **Second clause joined by ", and", ", but", ", so", or by a bare "and".** [grammatical] Two facts in one sentence, joined by
 a comma and a conjunction. It's the written form of the "X, Y" habit. Split them. ", so" counts too: a comma and "so" hitch a consequence on loosely. When the relation matters, name it with a subordinating word instead ("because", "until"), per SKILL.md item 10.

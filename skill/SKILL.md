@@ -46,11 +46,14 @@ checking only the prose a branch changed, allowing a repo's jargon
    inside a narrow band of short sentences is the same tell. Let some
    sentences run long when a subordinate clause does real work.
 4. **Contractions** where the register allows: don't, it's, can't.
-5. **Take a stance.** First person, hedges you mean ("I suspect", "probably")
-   and a real opinion where the document calls for one. Generated text is
-   confident and impersonal and praises by adjective. Authored text argues.
-   That holds for specifications and design docs too. The author exists,
-   so decisions read "we chose X because", never "X was chosen".
+5. **Take a stance.** First person belongs on judgments: what you'd pick,
+   what you expected, what surprised you, what you're unsure of ("I
+   suspect", "probably"). Generated text is confident and impersonal and
+   praises by adjective. Authored text argues. That holds for
+   specifications and design docs too. The author exists, so decisions
+   read "we chose X because", never "X was chosen". A log of your own
+   steps isn't a stance. Say what the check found. Save "I" for what you
+   make of it.
    - Before: "Both approaches have trade-offs that should be considered."
    - After: "I'd pick the nightly batch. A late invoice is cheaper than a double charge."
 6. **Specifics you have, questions for ones you don't.** Concrete details
@@ -323,7 +326,7 @@ asks for it. The report stays one or two lines.
 - [ ] At most one semicolon in the document
 - [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL
 - [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded in prose, not restated from a table
-- [ ] Not every fact comes with its reason, every anomaly with its explanation, or every story with its lesson. Loose ends and admissions come from the source, never added for texture
+- [ ] First person states judgments. It doesn't log the steps you took. Not every fact comes with its reason, every anomaly with its explanation, or every story with its lesson. Loose ends and admissions come from the source, never added for texture
 - [ ] Paragraphs end on their last fact or on what was decided. No crafted similes in technical prose. Numbers that don't reconcile in the source stay unreconciled. A template section with nothing to say is marked TBD or cut
 - [ ] Every claim of change has exactly one number. The figures a claim rests on are still exact
 - [ ] No trailing participial clause (", ensuring X", ", highlighting Y")
