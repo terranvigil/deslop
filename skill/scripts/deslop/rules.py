@@ -294,7 +294,7 @@ PATTERNS = [
     ("moves-the-line", "lexical", 1, "moves-the-line metaphor", "say what actually changes and by how much", r"mov(e|es|ing) the [a-z-]+ (line|needle)", 0, "block"),
     ("sharp-edge", "lexical", 1, "'sharp edge' metaphor", "name the actual problem", r"\bsharp(est)? edge\b", I, "block"),
     ("hedged-precision", "discourse", 2, "hedged number with false precision", "round to two significant figures, or drop the hedge", r"(about|approximately|roughly|around|nearly|estimated) +([0-9],[0-9][0-9][1-9]|[0-9]{4,}|[0-9]+\.[0-9]{2,})", I, "block"),
-    ("over-precise-pct", "discourse", 2, "over-precise percentage", "round it; decimals on a percentage need a denominator over 100", r"[0-9]\.[0-9]{2,} ?(%|percent)", 0, "block"),
+    ("over-precise-pct", "discourse", 2, "over-precise percentage", "round it unless it's a measured value in a spec, results doc or postmortem; decimals on a percentage need a denominator over 100", r"[0-9]\.[0-9]{2,} ?(%|percent)", 0, "block"),
     # rhetorical moves
     ("pseudo-cleft", "structural", 2, "pseudo-cleft reveal ('is what X')", "just say what it does", r"\bis what (closes|makes|does|drives|lets|keeps|gives)\b", I, "block"),
     ("self-posed-question", "structural", 2, "self-posed question", "state the answer as a sentence", r"\bthe (result|answer|catch|problem|takeaway|verdict|upshot|payoff|reason)\? ", I, "block"),

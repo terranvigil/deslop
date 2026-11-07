@@ -63,7 +63,12 @@ checking only the prose a branch changed, allowing a repo's jargon
 8. **End where the fact ends.** No trailing "-ing" significance clause.
    - Before: "Unclaimed parcels go back to the depot after 5 days, contributing to substantial gains in locker availability."
    - After: "Unclaimed parcels go back to the depot after 5 days. That frees 14% of the lockers on a typical Monday."
-9. **No throat-clearing, no recap.** Start with the point. Stop when it's made.
+9. **No throat-clearing, no recap.** Stop when the point is made. Where the
+   point goes depends on the genre. A status update leads with it. A
+   ticket or PR opens with the symptom, as the Pull requests section
+   says. A postmortem runs in time order. A design doc can build from
+   the problem to the choice. Don't put a summary paragraph on top of
+   every document by habit.
 10. **Join clauses with a subordinating word.** Don't hitch a second
    fact on with a comma: ", which ...", ", with the ...", ", while ...",
    ", so ...", ", and ..." or a participle like ", checked against". If a
@@ -89,11 +94,12 @@ checking only the prose a branch changed, allowing a repo's jargon
 Generated technical prose inlines figures far more often than authored prose
 does. The discipline is selection, not deletion.
 
-- Three or fewer values go in prose. Four to twenty go in a table. More than
-  twenty want a chart. A before/after across three or more metrics is a
-  table. These placement rules are for documents that can hold a table. In
-  Slack, a PR description or an email, the prose caps below are the whole
-  rule.
+- A table is for values a reader compares across or down. In a report,
+  spec or results doc, that usually means four to twenty values go in a
+  table. More than twenty want a chart. A memo, letter or postmortem keeps
+  its figures in prose. It spreads them across sentences and uses a table
+  only for a real comparison. In Slack, a PR description or an
+  email, the prose caps below are the whole rule.
 - At most three figures in a sentence, and only when they form one
   comparison. Two unrelated measurements don't share a sentence. A prose
   paragraph gets twelve digits, dates included. Digits inside names such as
@@ -107,10 +113,13 @@ does. The discipline is selection, not deletion.
   the derivation matters, give it a table, a figure, or a footnote the
   reader can choose. Readers stop tracking after the third figure in a
   paragraph, so put the one the claim rests on first.
-- Round to two significant figures in prose only when the exact value
-  survives somewhere else, such as a table, an appendix or a linked source.
-  With nowhere to put the precise figure, keep it in the sentence. Rounding
-  a number out of the document entirely loses data.
+- Rounding depends on the genre. A status note or a Slack post can round
+  to two significant figures when the exact value survives somewhere else,
+  such as a table, an appendix or a linked source. With nowhere to put
+  the precise figure, keep it in the sentence. Rounding a number out of
+  the document entirely loses data. A spec, a results doc or a postmortem
+  keeps the measured value and puts no "about" on it. There an
+  `over-precise-pct` finding on a measured value stays open.
 - A derived number gets no more significant figures than its least precise
   input. "About 3,482" is a contradiction. Pick the hedge or the precision.
 - Let the table hold the values while the prose names the takeaway. Don't
@@ -241,8 +250,9 @@ headed Details is left out of the budget, the density and the code count. For th
    2. **Remaining findings by severity**, highest first. Each finding's
       `scope` says what the fix has to touch.
       - `sentence`: rewrite the sentence the span is in.
-      - `paragraph`: restructure the paragraph or list by moving figures
-        to a table, varying the rhythm or dropping the bold labels. A
+      - `paragraph`: restructure the paragraph or list by varying the
+        rhythm, dropping the bold labels or, in a genre that takes a
+        table, moving figures to one (see the Numbers section). A
         sentence rewrite won't clear it.
       - `document`: a count or rate across the file. No single edit
         clears it, so fix what you can in passing and name it in the
@@ -270,10 +280,11 @@ headed Details is left out of the budget, the density and the code count. For th
       sufficient reason to stop. It doesn't mean you did it wrong. A
       nonzero score is fine. The goal is prose a skilled reader doesn't
       wince at, not a 0.
-   Findings kept on purpose (literal uses, quoted material, the user's
-   own voice per the voice profile, a sanctioned `table-restated` per the
-   Numbers section above) are fine. Name them in the report line instead
-   of arguing with the script.
+   Findings kept on purpose are fine. Name them in the report line instead
+   of arguing with the script. They include literal uses, quoted material
+   and the user's own voice per the voice profile. Per the Numbers section
+   above, a sanctioned `table-restated` is one too. An `over-precise-pct` finding stays
+   on a measured value in a spec, results doc or postmortem.
 5. Check what the revision added: run
    `~/.claude/skills/humanize-writing/scripts/check_tells.sh --diff <original> <revised>`
    against the pre-edit and post-edit versions. It reports only what your
@@ -325,7 +336,7 @@ asks for it. The report stays one or two lines.
 - [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Clauses joined by a subordinating word (because, until, although) are fine. Some sentences run long
 - [ ] At most one semicolon in the document
 - [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL
-- [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded in prose, not restated from a table
+- [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded only where the genre allows it, not restated from a table
 - [ ] First person states judgments. It doesn't log the steps you took. Not every fact comes with its reason, every anomaly with its explanation, or every story with its lesson. Loose ends and admissions come from the source, never added for texture
 - [ ] Paragraphs end on their last fact or on what was decided. No crafted similes in technical prose. Numbers that don't reconcile in the source stay unreconciled. A template section with nothing to say is marked TBD or cut
 - [ ] Every claim of change has exactly one number. The figures a claim rests on are still exact

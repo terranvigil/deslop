@@ -160,8 +160,10 @@ a comma and a conjunction. It's the written form of the "X, Y" habit. Split them
 23a. **Parenthetical asides in bulk.** [structural] Beyond data dumps: if an aside is worth saying, make it part of the sentence. If not, delete it. More than a couple of parentheticals per page is a tell.
 23b. **Number-stuffed prose.** [discourse] Beyond parentheses: figures sprayed through
     a paragraph until it reads like a bill of materials. Editorial practice
-    gives usable caps. Three or fewer values belong in prose. Four to twenty
-    belong in a table, and more than twenty want a chart. At most three
+    gives usable caps. In a report, spec or results doc, up to three values
+    belong in prose. A table takes four to twenty. Past twenty, use a
+    chart. A memo, letter or postmortem keeps its figures in prose
+    and uses a table only for a real comparison. At most three
     figures go in a sentence, and only when they form one comparison. A
     prose paragraph gets about twelve digits, counting dates. The cap is on
     running prose, so enumerated measurements in a list or table are exempt.

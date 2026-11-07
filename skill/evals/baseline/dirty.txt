@@ -11,7 +11,7 @@ line 7: banned word 'seamless' -> rewrite without it
 line 9: run of fresh bare subjects (4+ sentences, none threaded to the last) -> thread it (subordinate, connect, lead with the point) or make it a real list
 line 9: in today's opener -> cut the opener; start with the point
 line 9: monotone sentence rhythm (4 similar-length sentences) -> vary the lengths: fold two together, or cut one short
-line 9: number-dense paragraph (18 digits) -> state the takeaway in prose; put the values in a table
+line 9: number-dense paragraph (18 digits) -> state the takeaway in prose; put the values in a table, or spread them across paragraphs in a memo, letter or postmortem
 line 9: banned word 'myriad' -> rewrite without it
 line 9: arrow in prose -> write the chain as a sentence, or put it in a code block
 line 10: tilde approximation -> 'about' or the plain number
@@ -57,13 +57,13 @@ line 37: contrast scaffold ('X; it doesn't Y') -> state the positive claim; drop
 line 37: aphoristic echo sentence -> cut it, or merge the point into the previous sentence
 line 38: contrast as a habit (6 in 1154 words) -> state the fact; keep a foil only where the other option was real
 line 38: trailing 'X, not Y' contrast -> state the positive claim once; cut the negated foil
-line 42: number-dense paragraph (21 digits) -> state the takeaway in prose; put the values in a table
-line 42: number-dense sentence (7 figures) -> keep the one figure the claim needs; move the rest to a table
+line 42: number-dense paragraph (21 digits) -> state the takeaway in prose; put the values in a table, or spread them across paragraphs in a memo, letter or postmortem
+line 42: number-dense sentence (7 figures) -> keep the one figure the claim needs; move the rest to a table, or to other sentences in a memo, letter or postmortem
 line 43: table value restated in prose ('13.4') -> name the takeaway in prose; let the table hold the value
 line 43: table value restated in prose ('16.9') -> name the takeaway in prose; let the table hold the value
 line 45: hedged number with false precision -> round to two significant figures, or drop the hedge
 line 45: hedged number with false precision -> round to two significant figures, or drop the hedge
-line 45: over-precise percentage -> round it; decimals on a percentage need a denominator over 100
+line 45: over-precise percentage -> round it unless it's a measured value in a spec, results doc or postmortem; decimals on a percentage need a denominator over 100
 line 53: false-suspense transition -> cut the tease; say the thing
 line 54: self-posed question -> state the answer as a sentence
 line 54: fake-candid opener -> cut it; performed candor is its own tell
@@ -99,7 +99,7 @@ line 77: reminder close -> cut it; the document already said this
 line 79: model residue string -> delete it; this is a citation artifact, not content
 line 79: model residue string -> delete it; this is a citation artifact, not content
 line 81: thematic breaks as section glue (3 rules) -> headings separate sections; delete the rules
-line 93: number-dense sentence (4 figures) -> keep the one figure the claim needs; move the rest to a table
+line 93: number-dense sentence (4 figures) -> keep the one figure the claim needs; move the rest to a table, or to other sentences in a memo, letter or postmortem
 line 93: self-restatement marker -> say it once, in the better version
 line 94: manufactured foil ('as opposed to Y') -> state the positive claim; cut the foil
 line 94: manufactured foil ('X rather than Y') -> keep only if Y was genuinely on the table; otherwise state X alone
