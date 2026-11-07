@@ -314,6 +314,8 @@ asks for it. The report stays one or two lines.
 - [ ] At most one semicolon in the document
 - [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL
 - [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded in prose, not restated from a table
+- [ ] Not every fact comes with its reason, every anomaly with its explanation, or every story with its lesson. Loose ends and admissions come from the source, never added for texture
+- [ ] Paragraphs end on their last fact or on what was decided. No crafted similes in technical prose. Numbers that don't reconcile in the source stay unreconciled. A template section with nothing to say is marked TBD or cut
 - [ ] Every claim of change has exactly one number. The figures a claim rests on are still exact
 - [ ] No trailing participial clause (", ensuring X", ", highlighting Y")
 - [ ] Sections are lumpy. The hard part got the most room

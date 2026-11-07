@@ -286,6 +286,90 @@ ordinary prose with the same shape. It stays a judgment call.
    - Before: "Late returns hurt the branch in three ways. They block holds. They tie up the desk. The third cost is the fines nobody pays."
    - After: "Late returns block holds and tie up the desk. Nobody pays the fines on them."
 
+27m. **A reason on every fact.** [discourse] Each statement arrives with its
+justification attached: "because", "so that", "which matters when". One
+reason, where a reader would ask why, is good writing. A reason on every
+fact reads as a document defending itself to a grader. People state most
+facts flat and explain the one or two a reader would question or be
+tempted to change.
+   - Before: "Orders close at 2 p.m. so the bakers can plan the evening bake. Pickup runs until 6 because the shop shuts at 6:30. We text a reminder at noon, since most missed pickups are people who forgot."
+   - After: "Orders close at 2 p.m. and can be picked up until 6. The shop shuts at 6:30. We text a reminder at noon because most missed pickups are people who forgot."
+   - The other facts stay. The reasons for the cutoff and the pickup time go because no reader would ask for them. Keep a reason a reader would ask for.
+
+27n. **Planted loose ends and planted honesty.** [discourse] Admissions,
+asides and open threads placed to look authored: "one route still puzzles
+me a little", "I'll own that mistake", "I still can't account for the
+third Tuesday". Each is plausible alone. When there's one per section and
+every one is harmless or already resolved, they read as staged. A writer
+told which tells to avoid tends to add this texture on purpose. 27k still holds: keep
+the real loose ends the source has. Never add one. An admission
+belongs only if a reader would act differently because of it. Then it
+states the fact.
+   - Before: "The vans mostly turn up when they should. I'll admit the Thursday route still puzzles me a little, but it hasn't caused any real problems."
+   - After: "The vans mostly turn up when they should."
+   - The Thursday aside goes because it settles itself in the same breath. No reader would act on it. The hedge stays because it's a claim about the vans.
+
+27o. **Every anomaly explained.** [discourse] Each odd number gets a tidy
+cause, often credited to a different helpful colleague: "the March dip was
+the roadworks, as the front desk pointed out, and the caretaker traced
+August to the door counter". Real data has bumps nobody explained. Real documents say so
+or leave them out. When every outlier resolves, the document reads as
+written backward from the answers. Explain the anomalies a reader will ask
+about, give a cause only where someone found one, and name a person only
+when the reader might need to ask them.
+   - Before: "Visits dropped in March because of the roadworks, as Irene at the front desk pointed out. The June spike was the summer reading launch, and the caretaker traced the August dip to the broken door counter."
+   - After: "Visits dropped in March because of the roadworks. The June spike was the summer reading launch. The August dip came from the broken door counter."
+   - The causes stay because someone found them. The names go because the reader has no reason to ask Irene or the caretaker.
+
+27p. **Stories that resolve on cue.** [discourse] 27h at the scale of an
+anecdote. An incident or example comes in three tidy beats (problem,
+insight, fix). The fix works at once. A lesson closes it. Real
+incidents have dead ends, partial fixes and causes that are only ever
+probable. Tell it the way it went. Include the part that didn't
+work.
+   - Before: "Last spring the hold shelf overflowed every Monday. Then we noticed weekend returns were being shelved first. We swapped the order, and the overflow stopped overnight."
+   - After: "The hold shelf overflowed every Monday last spring, when weekend returns were being shelved first. Swapping the order stopped it overnight."
+   - When the source has no dead end, the fix doesn't add one. It drops the narrated beats ("Then we noticed") and tells the story flat.
+
+27q. **Punchline closers.** [structural] A paragraph of explanation ends on
+a short line that turns it into a moral: "New van, old habits." "Speed
+isn't service." "If it's close, we hold it back." It's a
+columnist's kicker. End on the last fact, or on what was decided. A short
+closing sentence alone isn't the tell, since people end paragraphs on
+short sentences all the time. The tell is a line that generalizes and
+adds no fact the paragraph didn't already give. That's why it isn't scanned.
+   - Before: "We tried same-day delivery for a month. Half the orders came in after the van had left, and drivers spent the afternoon on single drops. Speed isn't the same as service."
+   - After: "We tried same-day delivery for a month. Half the orders came in after the van had left. Drivers spent the afternoon on single drops."
+
+27r. **Literary similes in technical prose.** [lexical] "The rota is a
+contract the way a handshake is one", "the queue fills like a bath with
+the plug in". A crafted image in a spec makes the reader translate it
+back. When technical writers reach for a figure of speech, it's a worn one
+("bottleneck") used as a term. State the property the simile points at.
+   - Before: "The waitlist works like a coat check: you hand over your name and trust that someone will call it."
+   - After: "You give your name to the waitlist and wait for someone to call it."
+
+27s. **Numbers that cross-check perfectly.** [discourse] Every figure agrees
+with every other. Parts sum exactly to the total and every percentage
+matches its count to the decimal. The before and after differ by a round
+amount. Real figures come from different sources and dates and often don't
+quite reconcile. The writer says why. Keep a real mismatch and its reason.
+Never adjust a figure to make a sum close. Never invent one.
+   - Before: "Of 1,200 members, 720 (60%) booked online, 360 (30%) by phone and 120 (10%) at the desk."
+   - The After shows what figures from separate logs look like in a different source. It isn't a rewrite of the Before, whose figures stay as they are if they're real.
+   - After: "The booking system logged 1,140 online bookings last term. The phone log shows 410 calls. Because some of those calls changed an existing booking, the two figures don't add up to one total."
+
+27t. **Every slot filled.** [structural] A template where every field holds
+something. Every risk has a mitigation, every goal a metric and every open
+question an owner and a date. Real filled-in templates have an empty
+section, a "TBD", an "n/a" and one section that runs long. When the
+source has nothing for a slot, mark it TBD or cut the section. Don't fill
+it to make the form look finished. This is 27f and 27g at the level of
+fields.
+   - Before: "Risks: vendor delay (mitigation: second supplier). Staff turnover (mitigation: cross-training). Budget overrun (mitigation: monthly review)."
+   - The After shows the same list from an author with no plan for turnover. It isn't a rewrite of the Before. The Before stays as it is if every mitigation is real.
+   - After: "Risks: vendor delay (mitigation: second supplier). Staff turnover (mitigation: TBD). Budget overrun (mitigation: monthly review)."
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they
