@@ -79,7 +79,7 @@ natural. Slack is the register the tell hides in, so it gets no exception.
    - After: "The ticket asks for three numbers. I checked each one against current code and data on 22 October. The poster text and figure follow."
    - A test for your own drafts: if a sentence has two or more commas and they don't separate items in a list, it's carrying more than one fact. Split it.
 8h. **Second clause joined by ", and", ", but", ", so", or by a bare "and".** [grammatical] Two facts in one sentence, joined by
-a comma and a conjunction. It's the written form of the "X, Y" habit. Split them. ", so" counts too. Making one fact the other's consequence still packs two facts into one sentence.
+a comma and a conjunction. It's the written form of the "X, Y" habit. Split them. ", so" counts too: a comma and "so" hitch a consequence on loosely. When the relation matters, name it with a subordinating word instead ("because", "until"), per SKILL.md item 10.
    - Before: "Returns go through the front desk, and the drop box is emptied only on Mondays."
    - After: "Returns go through the front desk. The drop box is emptied only on Mondays."
    - Before: "Each allotment plot has its own water meter and we read them on the last Sunday of the month."

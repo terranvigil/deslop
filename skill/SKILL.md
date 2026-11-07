@@ -42,7 +42,9 @@ checking only the prose a branch changed, allowing a repo's jargon
    - After: "The new rota means fewer overtime hours."
 3. **Vary sentence length on purpose.** Follow a long sentence with a short
    one. Uniform medium-length sentences read generated. Detectors call this
-   variation burstiness, and the script flags monotone runs.
+   variation burstiness, and the script flags monotone runs. Variation
+   inside a narrow band of short sentences is the same tell. Let some
+   sentences run long when a subordinate clause does real work.
 4. **Contractions** where the register allows: don't, it's, can't.
 5. **Take a stance.** First person, hedges you mean ("I suspect", "probably")
    and a real opinion where the document calls for one. Generated text is
@@ -59,13 +61,18 @@ checking only the prose a branch changed, allowing a repo's jargon
    - Before: "Unclaimed parcels go back to the depot after 5 days, contributing to substantial gains in locker availability."
    - After: "Unclaimed parcels go back to the depot after 5 days. That frees 14% of the lockers on a typical Monday."
 9. **No throat-clearing, no recap.** Start with the point. Stop when it's made.
-10. **One fact per sentence.** Don't hitch a second fact on with a comma:
-   ", which ...", ", with the ...", ", while ...", ", so ...", ", and ..." or a
-   participle like ", checked against". If a sentence has two commas that
-   aren't separating list items, split it. Keep the long/short variation
-   by letting some sentences carry a longer single fact, not a chain.
-   - Before: "Code is master at 014b7b5, which includes SDK-161, checked on 22 Oct."
-   - After: "I checked master at 014b7b5 on 22 Oct. It includes SDK-161."
+10. **Join clauses with a subordinating word.** Don't hitch a second
+   fact on with a comma: ", which ...", ", with the ...", ", while ...",
+   ", so ...", ", and ..." or a participle like ", checked against". If a
+   sentence has two commas that aren't separating list items, split the
+   chain. Two clauses can share a sentence when a subordinating word says
+   how they relate: because, although, until, once, when. A comma with
+   "and", "but" or "so" doesn't count. Use the join where the relation
+   matters to the reader. A reason on every fact is its own tell, as
+   tells.md 27m says. So is a paragraph of short one-fact sentences.
+   Don't split everything.
+   - Before: "Late books go to the returns cart, which is emptied by the morning shift, sorted by branch."
+   - After: "Late books wait on the returns cart until the morning shift empties it. They're sorted by branch."
 11. **Thread sentences with the known-new contract.** Open a sentence from
    something the previous one established, then add the new thing. A run of
    "X1 does Y1. X2 does Y2." rows, each opening a fresh subject, is a list
@@ -248,7 +255,9 @@ headed Details is left out of the budget, the density and the code count. For th
       - `structural`: state the claim directly. Cut the scaffold, the
         transition tic, or the manufactured contrast around it.
       - `grammatical`: end the sentence at the fact. If there's a
-        consequence, say it in its own sentence.
+        consequence, say it in its own sentence. Where the relation
+        matters, item 10's subordinating word ("because", "until") can
+        carry it in one sentence.
       - `discourse`: commit to the claim or cut the sentence. If it's
         vague because the source is vague, say so or ask. Never invent
         a specific to fill the gap.
@@ -310,7 +319,7 @@ asks for it. The report stays one or two lines.
 - [ ] Nothing is defined by what it isn't ("it's X, not Y", "isn't X, it's Y", negated headings), and there's no manufactured foil in the affirmative forms either ("X rather than Y", "as opposed to Y"). A foil stays only when Y was a real option, a rejected decision, or a live misconception. When the source's own claim is a contrast, keep it once and state it plainly
 - [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
-- [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Each fact gets its own sentence while the long/short variation stays
+- [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Clauses joined by a subordinating word (because, until, although) are fine. Some sentences run long
 - [ ] At most one semicolon in the document
 - [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL
 - [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded in prose, not restated from a table
