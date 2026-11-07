@@ -42,13 +42,18 @@ checking only the prose a branch changed, allowing a repo's jargon
    - After: "The new rota means fewer overtime hours."
 3. **Vary sentence length on purpose.** Follow a long sentence with a short
    one. Uniform medium-length sentences read generated. Detectors call this
-   variation burstiness, and the script flags monotone runs.
+   variation burstiness, and the script flags monotone runs. Variation
+   inside a narrow band of short sentences is the same tell. Let some
+   sentences run long when a subordinate clause does real work.
 4. **Contractions** where the register allows: don't, it's, can't.
-5. **Take a stance.** First person, hedges you mean ("I suspect", "probably")
-   and a real opinion where the document calls for one. Generated text is
-   confident and impersonal and praises by adjective. Authored text argues.
-   That holds for specifications and design docs too. The author exists,
-   so decisions read "we chose X because", never "X was chosen".
+5. **Take a stance.** First person belongs on judgments: what you'd pick,
+   what you expected, what surprised you, what you're unsure of ("I
+   suspect", "probably"). Generated text is confident and impersonal and
+   praises by adjective. Authored text argues. That holds for
+   specifications and design docs too. The author exists, so decisions
+   read "we chose X because", never "X was chosen". A log of your own
+   steps isn't a stance. Say what the check found. Save "I" for what you
+   make of it.
    - Before: "Both approaches have trade-offs that should be considered."
    - After: "I'd pick the nightly batch. A late invoice is cheaper than a double charge."
 6. **Specifics you have, questions for ones you don't.** Concrete details
@@ -58,14 +63,24 @@ checking only the prose a branch changed, allowing a repo's jargon
 8. **End where the fact ends.** No trailing "-ing" significance clause.
    - Before: "Unclaimed parcels go back to the depot after 5 days, contributing to substantial gains in locker availability."
    - After: "Unclaimed parcels go back to the depot after 5 days. That frees 14% of the lockers on a typical Monday."
-9. **No throat-clearing, no recap.** Start with the point. Stop when it's made.
-10. **One fact per sentence.** Don't hitch a second fact on with a comma:
-   ", which ...", ", with the ...", ", while ...", ", so ...", ", and ..." or a
-   participle like ", checked against". If a sentence has two commas that
-   aren't separating list items, split it. Keep the long/short variation
-   by letting some sentences carry a longer single fact, not a chain.
-   - Before: "Code is master at 014b7b5, which includes SDK-161, checked on 22 Oct."
-   - After: "I checked master at 014b7b5 on 22 Oct. It includes SDK-161."
+9. **No throat-clearing, no recap.** Stop when the point is made. Where the
+   point goes depends on the genre. A status update leads with it. A
+   ticket or PR opens with the symptom, as the Pull requests section
+   says. A postmortem runs in time order. A design doc can build from
+   the problem to the choice. Don't put a summary paragraph on top of
+   every document by habit.
+10. **Join clauses with a subordinating word.** Don't hitch a second
+   fact on with a comma: ", which ...", ", with the ...", ", while ...",
+   ", so ...", ", and ..." or a participle like ", checked against". If a
+   sentence has two commas that aren't separating list items, split the
+   chain. Two clauses can share a sentence when a subordinating word says
+   how they relate: because, although, until, once, when. A comma with
+   "and", "but" or "so" doesn't count. Use the join where the relation
+   matters to the reader. A reason on every fact is its own tell, as
+   tells.md 27m says. So is a paragraph of short one-fact sentences.
+   Don't split everything.
+   - Before: "Late books go to the returns cart, which is emptied by the morning shift, sorted by branch."
+   - After: "Late books wait on the returns cart until the morning shift empties it. They're sorted by branch."
 11. **Thread sentences with the known-new contract.** Open a sentence from
    something the previous one established, then add the new thing. A run of
    "X1 does Y1. X2 does Y2." rows, each opening a fresh subject, is a list
@@ -79,11 +94,12 @@ checking only the prose a branch changed, allowing a repo's jargon
 Generated technical prose inlines figures far more often than authored prose
 does. The discipline is selection, not deletion.
 
-- Three or fewer values go in prose. Four to twenty go in a table. More than
-  twenty want a chart. A before/after across three or more metrics is a
-  table. These placement rules are for documents that can hold a table. In
-  Slack, a PR description or an email, the prose caps below are the whole
-  rule.
+- A table is for values a reader compares across or down. In a report,
+  spec or results doc, that usually means four to twenty values go in a
+  table. More than twenty want a chart. A memo, letter or postmortem keeps
+  its figures in prose. It spreads them across sentences and uses a table
+  only for a real comparison. In Slack, a PR description or an
+  email, the prose caps below are the whole rule.
 - At most three figures in a sentence, and only when they form one
   comparison. Two unrelated measurements don't share a sentence. A prose
   paragraph gets twelve digits, dates included. Digits inside names such as
@@ -97,10 +113,13 @@ does. The discipline is selection, not deletion.
   the derivation matters, give it a table, a figure, or a footnote the
   reader can choose. Readers stop tracking after the third figure in a
   paragraph, so put the one the claim rests on first.
-- Round to two significant figures in prose only when the exact value
-  survives somewhere else, such as a table, an appendix or a linked source.
-  With nowhere to put the precise figure, keep it in the sentence. Rounding
-  a number out of the document entirely loses data.
+- Rounding depends on the genre. A status note or a Slack post can round
+  to two significant figures when the exact value survives somewhere else,
+  such as a table, an appendix or a linked source. With nowhere to put
+  the precise figure, keep it in the sentence. Rounding a number out of
+  the document entirely loses data. A spec, a results doc or a postmortem
+  keeps the measured value and puts no "about" on it. There an
+  `over-precise-pct` finding on a measured value stays open.
 - A derived number gets no more significant figures than its least precise
   input. "About 3,482" is a contradiction. Pick the hedge or the precision.
 - Let the table hold the values while the prose names the takeaway. Don't
@@ -231,8 +250,9 @@ headed Details is left out of the budget, the density and the code count. For th
    2. **Remaining findings by severity**, highest first. Each finding's
       `scope` says what the fix has to touch.
       - `sentence`: rewrite the sentence the span is in.
-      - `paragraph`: restructure the paragraph or list by moving figures
-        to a table, varying the rhythm or dropping the bold labels. A
+      - `paragraph`: restructure the paragraph or list by varying the
+        rhythm, dropping the bold labels or, in a genre that takes a
+        table, moving figures to one (see the Numbers section). A
         sentence rewrite won't clear it.
       - `document`: a count or rate across the file. No single edit
         clears it, so fix what you can in passing and name it in the
@@ -248,7 +268,9 @@ headed Details is left out of the budget, the density and the code count. For th
       - `structural`: state the claim directly. Cut the scaffold, the
         transition tic, or the manufactured contrast around it.
       - `grammatical`: end the sentence at the fact. If there's a
-        consequence, say it in its own sentence.
+        consequence, say it in its own sentence. Where the relation
+        matters, item 10's subordinating word ("because", "until") can
+        carry it in one sentence.
       - `discourse`: commit to the claim or cut the sentence. If it's
         vague because the source is vague, say so or ask. Never invent
         a specific to fill the gap.
@@ -258,10 +280,11 @@ headed Details is left out of the budget, the density and the code count. For th
       sufficient reason to stop. It doesn't mean you did it wrong. A
       nonzero score is fine. The goal is prose a skilled reader doesn't
       wince at, not a 0.
-   Findings kept on purpose (literal uses, quoted material, the user's
-   own voice per the voice profile, a sanctioned `table-restated` per the
-   Numbers section above) are fine. Name them in the report line instead
-   of arguing with the script.
+   Findings kept on purpose are fine. Name them in the report line instead
+   of arguing with the script. They include literal uses, quoted material
+   and the user's own voice per the voice profile. Per the Numbers section
+   above, a sanctioned `table-restated` is one too. An `over-precise-pct` finding stays
+   on a measured value in a spec, results doc or postmortem.
 5. Check what the revision added: run
    `~/.claude/skills/humanize-writing/scripts/check_tells.sh --diff <original> <revised>`
    against the pre-edit and post-edit versions. It reports only what your
@@ -310,10 +333,12 @@ asks for it. The report stays one or two lines.
 - [ ] Nothing is defined by what it isn't ("it's X, not Y", "isn't X, it's Y", negated headings), and there's no manufactured foil in the affirmative forms either ("X rather than Y", "as opposed to Y"). A foil stays only when Y was a real option, a rejected decision, or a live misconception. When the source's own claim is a contrast, keep it once and state it plainly
 - [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
-- [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Each fact gets its own sentence while the long/short variation stays
+- [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Clauses joined by a subordinating word (because, until, although) are fine. Some sentences run long
 - [ ] At most one semicolon in the document
 - [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL
-- [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded in prose, not restated from a table
+- [ ] Figures obey the number rules: three per sentence, a dozen digits per paragraph, rounded only where the genre allows it, not restated from a table
+- [ ] First person states judgments. It doesn't log the steps you took. Not every fact comes with its reason, every anomaly with its explanation, or every story with its lesson. Loose ends and admissions come from the source, never added for texture
+- [ ] Paragraphs end on their last fact or on what was decided. No crafted similes in technical prose. Numbers that don't reconcile in the source stay unreconciled. A template section with nothing to say is marked TBD or cut
 - [ ] Every claim of change has exactly one number. The figures a claim rests on are still exact
 - [ ] No trailing participial clause (", ensuring X", ", highlighting Y")
 - [ ] Sections are lumpy. The hard part got the most room

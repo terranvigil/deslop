@@ -228,11 +228,11 @@ class Detector:
                 n = len(R.FIGURE.findall(s2)) + len(R.NUMERAL_WORDS.findall(s2))
                 worst = max(worst, n)
             if worst > 3:
-                self.add("number-dense-sentence", "discourse", 2, f"number-dense sentence ({worst} figures)", "keep the one figure the claim needs; move the rest to a table", b.start, b.end, "")
+                self.add("number-dense-sentence", "discourse", 2, f"number-dense sentence ({worst} figures)", "keep the one figure the claim needs; move the rest to a table, or to other sentences in a memo, letter or postmortem", b.start, b.end, "")
             t = R.IDENT_LETTER_FIRST.sub("", b.text); t = R.IDENT_DIGIT_FIRST.sub("", t)
             digits = len(re.findall(r"[0-9]", t))
             if digits > 12:
-                self.add("number-dense-paragraph", "discourse", 2, f"number-dense paragraph ({digits} digits)", "state the takeaway in prose; put the values in a table", b.start, b.end, "")
+                self.add("number-dense-paragraph", "discourse", 2, f"number-dense paragraph ({digits} digits)", "state the takeaway in prose; put the values in a table, or spread them across paragraphs in a memo, letter or postmortem", b.start, b.end, "")
             raw = R.LINK_TARGET_RAW.sub("]", d.src[b.start:b.end])
             n = kinds = 0
             for rx in R.SPECIFICS:

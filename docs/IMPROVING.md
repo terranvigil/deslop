@@ -120,3 +120,10 @@ Change the Workflow text the way you'd change code:
 Two things never go into `SKILL.md`: the rule lists, and examples taken
 from the logs. Both teach the fixer to dodge the detector instead of
 writing better.
+
+The same holds for prompts that ask a model to write a whole document. A
+list of tells to avoid makes the writer plant human touches instead: an
+aside, an admission or a loose end placed for texture. Blind readers pick
+those out as the giveaway. A human-written document to match doesn't make
+generated text pass either. Neither replaces the workflow's
+findings-driven rewrite.

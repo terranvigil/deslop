@@ -57,7 +57,7 @@ def run(det) -> None:
     for b in d.prose_blocks:
         for m in HISTORY.finditer(b.text):
             det.add("pr-history", "discourse", 2, f"development history in a PR ('{m.group(0)}')",
-                    "state the current behaviour; the history lives in the commits", b.start + m.start(),
+                    "state the current behavior; the history lives in the commits", b.start + m.start(),
                     b.start + m.end(), m.group(0))
     numbers = len(NUMBER.findall(TICKET.sub(" ", story)))
     if words and numbers * 100 / words > NUMBER_DENSITY:

@@ -42,7 +42,8 @@ Expect the same counts or a change you meant to make, then re-record with
 
 - A staccato slogan rewrite (rows of five-word sentences).
 - Numbers a reader needed dropped or rounded away. Rounding in prose is
-  fine, but losing the figure isn't.
+  fine where the genre allows it, but losing the figure isn't. A spec,
+  results doc or postmortem keeps its measured values.
 - Meaning drift or dropped claims.
 - New headers, bold, or bullets added where the fixture had prose.
 
