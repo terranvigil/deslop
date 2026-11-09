@@ -37,7 +37,7 @@ land lands landed landing
 myriad plethora paramount spearhead spearheads spearheading spearheaded
 robustness keystone surface surfaces surfacing surfaced ambient
 pins pinned pinning bind binds fronts fronted fronting fight fights
-fighting cuts backs mint mints minted minting shape shapes shaping toll diurnal honest honestly carries lever levers gates gating gated
+fighting cuts backs mint mints minted minting shape shapes shaping toll diurnal honest honestly carries lever levers gates gating gated rig rigs
 embark embarks embarking paradigm journey journeys unlock unlocks
 unlocking unlocked empower empowers empowering empowered streamline
 streamlines streamlining streamlined cultivate cultivates cultivating rich
@@ -77,6 +77,7 @@ _WORD_FIX = [
     (r"(honest|honestly)$", "honesty is assumed in tech docs; state the limit or cost plainly"),
     (r"carries$", "fine for physical transport; say has, holds, includes, or is used for"),
     (r"(lever|levers)$", "fine for physical levers; name the actual setting or action, or drop it"),
+    (r"(rig|rigs)$", "fine for a physical test rig; for a user's computer say PC, machine, setup, hardware"),
     (r"(gates|gating|gated)$", "as a verb say blocks, must pass before; for criteria say check, requirement"),
     (r"embark", "start"),
     (r"paradigm$", "model, approach"),
