@@ -154,6 +154,12 @@ a comma and a conjunction. It's the written form of the "X, Y" habit. Split them
     - Before: "## How we prove it"
     - After: "## Testing and validation"
 20. **Italic subtitle under the title.** [structural] "*Spring term - draft for staff review*". Fold it into the opening paragraph.
+20a. **Tagline under the title.** [structural] A plain line under the H1, or a byline, that sells the document: "How we ship camera flow at 40% of today's size, and keep every number inside a stated accuracy". It joins two claims with "and", names a result before the reader has the context, and says nothing the first paragraph doesn't. The checker flags a one-line paragraph of six or more words with no final period right under an H1. A short plain label is fine ("A codec for the camera flow in our packages"). Better, no subtitle.
+    - Before: "# OFC\n\nHow we ship camera flow at 40% of today's size, and keep every number inside a stated accuracy"
+    - After: "# OFC, the Optical Flow Codec" and the first paragraph states the size.
+20b. **Tricolon fragments and bold lead-ins in a list.** [structural] "**Smaller.** ... **Accurate.** ... **Easy to open.**" Three bold one-word labels, each over a sentence, read as a pitch. Write the three facts as ordinary sentences, in the order a reader needs them. The checker only sees this when the bold survives, so check Markdown, never text with the tags stripped.
+20c. **Claim swapped for a claim.** [discourse] Cutting a sentence you can't support and putting another unsupported sentence in its place ("It is the biggest stream we ship."). Every sentence about the world traces to the source or a measurement. If nothing supports a replacement, leave the gap.
+20d. **Generic contrast filler.** [discourse] "It is smooth in some places and sharp in others." A balanced pair that fits any image, any dataset, any process. Replace it with the measured fact it stands in for, or cut it.
 21. **Repeated table column headers.** [structural] Re-explaining sourcing in every table ("Oven hours (March actual)"). Establish sourcing once in prose and use plain headers after.
 22. **Backticks on non-code.** [structural] Table names, Slack channels, config keys styled as code. Backticks are for code, paths, and commands.
 23. **Parenthetical data dumps.** [structural] "(3 vans, 11 routes, 90-minute delivery windows)". Weave it in or give it its own sentence.

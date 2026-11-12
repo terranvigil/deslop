@@ -419,7 +419,7 @@ CODE_PATH = re.compile(r"`[\w.-]*/[\w./-]*\.[A-Za-z]{1,5}`")
 FIX_SCOPE = {
     "paragraph": {"monotone-rhythm", "fresh-subjects", "number-dense-sentence", "number-dense-paragraph",
                   "fact-dense-paragraph",
-                  "symmetric-bullets", "italic-subtitle", "pr-results-table", "pr-untracked-open-item"},
+                  "symmetric-bullets", "italic-subtitle", "tagline-subtitle", "pr-results-table", "pr-untracked-open-item"},
     "document": {"colon-splice", "semicolon-chain", "authorless", "no-hedges", "flat-rhythm", "dash-budget",
                  "participial-rate", "even-section-weight", "thematic-breaks", "rule-of-three",
                  "contrast-habit", "name-drift", "overused", "llm-adverb", "pr-length", "pr-number-dense"},

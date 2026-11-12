@@ -111,6 +111,7 @@ EXAMPLES = {
     # --- detector checks, detect.py -------------------------------------------
     "quantifier-tail": ("The branches reopened Monday, each with shorter hours.", "Each branch reopened Monday with shorter hours."),
     "italic-subtitle": ("# Spring fair\n\n_What went right and what did not_\n\nStalls sold out.", "# Spring fair\n\nStalls sold out by _ten_ in the morning."),
+    "tagline-subtitle": ("# Camera flow\n\nHow we ship it at 40% of the size and keep every number inside a stated accuracy\n\nThe flow is smaller.", "# Camera flow\n\nThe flow now takes 40% of its old size. Every value stays inside the stated error."),
     "hedge-stack": ("Perhaps the new timetable might arguably suit most teachers.", "The new timetable suits most teachers, I think."),
     "number-dense-sentence": ("The shelter took in 14 dogs, 9 cats, 3 rabbits and 2 ferrets.", "The shelter took in more dogs than cats this month."),
     "number-dense-paragraph": ("Membership was 1402 in 2023 and 1876 in 2024.", "Membership grew by about a third over two years."),

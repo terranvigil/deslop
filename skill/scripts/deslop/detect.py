@@ -116,6 +116,10 @@ class Detector:
             if re.match(r"^[*_][^*_].*[*_]\s*$", line) and re.match(r"^# ", prev):
                 off = sum(len(l) + 1 for l in cleaned_lines[:i])
                 self.add("italic-subtitle", "structural", 2, "italic subtitle under title", "fold it into the opening paragraph", off, off + len(line), line)
+            elif re.match(r"^# ", prev) and re.match(r"^[^#*_>|`\-\d\s<!\[][^\n]*[^.!?:\s]\s*$", line) and len(line.split()) >= 6 \
+                    and i + 1 < len(cleaned_lines) and not cleaned_lines[i + 1].strip():
+                off = sum(len(l) + 1 for l in cleaned_lines[:i])
+                self.add("tagline-subtitle", "structural", 2, "tagline under the title", "drop it, or state one plain fact as a sentence", off, off + len(line), line)
             if line.strip():
                 prev = line
 
