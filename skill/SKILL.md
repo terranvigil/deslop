@@ -234,6 +234,23 @@ headed Details is left out of the budget, the density and the code count. For th
    part take more room than the easy parts. Sentence polish on a section
    you should have cut is wasted.
 2. Draft or revise from the underlying meaning, following the recipe.
+2a. **Check what the reader sees, in the form the reader sees it.** For
+   an HTML page, PDF source, slide or any document with markup, convert it
+   to Markdown first (headings as `#`, bold as `**`, lists as `-`, the
+   subtitle as its own line). Stripping the tags blinds the structure
+   rules: the bold-label list and the tagline under the title read as
+   ordinary sentences. Include every visible string: title, subtitle or
+   byline, headings, captions, chart and table labels, table cells, the
+   glossary. A title and a subtitle are the first thing read, so they get
+   the most scrutiny, not the least.
+2b. **Read it once as a skeptical editor before the script.** Read the
+   title, the subtitle and the headings alone, then the first paragraph.
+   Ask of each: could this sit on any other document, does it sell, does it
+   join two claims with "and", does it open with a result the reader has no
+   context for? Then look for lists of bold lead-ins, three short labels in
+   a row, balanced "some places, others" filler, and any sentence about the
+   world that the source doesn't back. Fix those by hand. The script runs
+   after, to catch what you missed.
 3. Save the prose to a file (a scratch file if it's headed for chat or
    Slack) and run the script on it directly. It's an executable shell
    script, so don't prefix it with `python3`:
@@ -372,6 +389,13 @@ asks for it. The report stays one or two lines.
   so, which) or reshape the paragraph. A row of disconnected declaratives
   is the same tell with different punctuation.
 - Replacements come from the source or from asking, never from invention.
+  That includes the replacement for a sentence you cut for being
+  unsupported. Don't swap one unverified claim for another.
+- The checker is a floor, not the verdict. Never report a document as
+  clean or "plain otherwise" while findings are still open and unread, and
+  never skip the read-through below because the script went quiet. It
+  misses slogans, taglines and pitch-style lists that a person spots in a
+  second.
 - Break any of these rules sooner than write something barbarous.
 
 ## Improving this skill
