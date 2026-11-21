@@ -358,6 +358,21 @@ FRESH_SUBJECT_BREAK = frozenset(
     "nonetheless nevertheless hence accordingly there here".split()
 )
 
+# afterthought tail (tells.md 27u): a sentence of seven words or fewer,
+# not the first in its paragraph, opening on a word that points back at
+# the sentence before ("It resumes later."). inline code counts as one
+# word. "this" and "there" are left off, since human prose opens short
+# sentences with them often ("This is illustrated in Figure 4."), and so
+# is a short lead-in ending in a colon. measured: 2 hits in 178k words of
+# pre-LLM technical prose (one sentence, in two copies of a post) and 1 in
+# 45k of one writer's own, against 79 in 140k words of generated docs.
+AFTERTHOUGHT_OPENERS = frozenset("it that its they then".split())
+AFTERTHOUGHT_MAX_WORDS = 7
+# a hedged tail ("That part seems fine.") is the writer's judgment, which
+# the recipe asks for, so a hedge word exempts it.
+AFTERTHOUGHT_HEDGED = re.compile(r"\b(seems?|usually|probably|likely|might|may|could|often|generally|roughly|perhaps|maybe|I think|I suspect)\b", I)
+APHORISTIC_ECHO = re.compile(r"^That (takes|is|was|does|means) [a-z']+\.$")
+
 # document-level thresholds, copied from the script
 OVERUSED_QUALIFIERS = ("deliberately", "plainly", "simply", "relatively")  # 3+
 LLM_ADVERBS = ("notably", "particularly", "additionally")  # 2+
@@ -418,7 +433,7 @@ CODE_PATH = re.compile(r"`[\w.-]*/[\w./-]*\.[A-Za-z]{1,5}`")
 
 FIX_SCOPE = {
     "paragraph": {"monotone-rhythm", "fresh-subjects", "number-dense-sentence", "number-dense-paragraph",
-                  "fact-dense-paragraph",
+                  "fact-dense-paragraph", "afterthought-tail",
                   "symmetric-bullets", "italic-subtitle", "pr-results-table", "pr-untracked-open-item"},
     "document": {"colon-splice", "semicolon-chain", "authorless", "no-hedges", "flat-rhythm", "dash-budget",
                  "participial-rate", "even-section-weight", "thematic-breaks", "rule-of-three",

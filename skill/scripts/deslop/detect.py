@@ -254,6 +254,24 @@ class Detector:
                     i = 0 if i < 0 else i
                     self.add("hedge-stack", "discourse", 2, f"hedge stack ({n} hedges in one sentence)", "keep the one hedge the uncertainty needs, or commit", b.start + i, b.start + i + len(s), s[:60])
 
+        # afterthought tail: a short back-pointing sentence after the point
+        for b in d.prose_blocks:
+            if b.kind != "paragraph":
+                continue
+            cur = 0
+            for k, s in enumerate(sentences(b.text)):
+                i = b.text.find(s, cur)
+                i = cur if i < 0 else i
+                cur = i + len(s)
+                s = s.strip()
+                if k == 0 or not s or s.endswith(":") or R.APHORISTIC_ECHO.match(s) or R.AFTERTHOUGHT_HEDGED.search(s):
+                    continue
+                if s.split()[0].lower() not in R.AFTERTHOUGHT_OPENERS:
+                    continue
+                n = len(s.split()) + len(T.INLINE_CODE.findall(d.src[b.start + i:b.start + cur]))
+                if n <= R.AFTERTHOUGHT_MAX_WORDS:
+                    self.add("afterthought-tail", "discourse", 1, "afterthought tail (short sentence leaning back on the last)", "delete it if the reader loses nothing they'd act on; fold it in only if it's a real second fact", b.start + i, b.start + cur, s[:60])
+
         # table values restated in prose
         table_text = "\n".join(l for l in cleaned.split("\n") if l.strip().startswith("|") or l.count("|") >= 2)
         if table_text.strip():

@@ -372,6 +372,20 @@ fields.
    - The After shows the same list from an author with no plan for turnover. It isn't a rewrite of the Before. The Before stays as it is if every mitigation is real.
    - After: "Risks: vendor delay (mitigation: second supplier). Staff turnover (mitigation: TBD). Budget overrun (mitigation: monthly review)."
 
+27u. **Afterthought tail.** [structural] A short sentence, under about
+eight words, added after the point is made. It tacks on a small side
+effect, a defensive disclaimer, the obvious inverse of an option, or
+arithmetic the number already gives. It usually leans back with "It",
+"That", "There" or "Then". To test one, delete it. If the reader loses
+nothing they'd act on, it stays deleted. Fold it into the sentence before
+only when it's a real second fact. A definition isn't the tell, and
+neither is a pointer to the next step or a sentence that changes what the
+reader does. The checker hints at the form as `afterthought-tail`.
+   - Before: "The library texts a reminder two days before a book is due. It never texts twice."
+   - After: "The library texts a reminder two days before a book is due."
+   - Before: "Members can switch the reminders on in their account. They can switch them off there too."
+   - After: "Members switch the reminders on or off in their account."
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they
