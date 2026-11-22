@@ -310,6 +310,7 @@ class Detector:
                 wa = set(re.findall(r"[a-z]+", sa.lower())); wb = set(re.findall(r"[a-z]+", sb.lower()))
                 if (len(sa.split()) <= R.MIRROR_MAX_FIRST and len(sb.split()) <= R.MIRROR_MAX_SECOND
                         and not (wa | wb) & R.MIRROR_CONTRAST
+                        and not re.match(r"^[A-Z]{2,}\b", sb)
                         and any((x in wa and y in wb) or (y in wa and x in wb) for x, y in R.MIRROR_PAIRS)):
                     self.add("mirror-pair", "structural", 1, "mirror pair (a sentence followed by its inverse)", "keep the side the reader needs; put both in one sentence only when the contrast is the point", b.start + ib, b.start + eb, sb[:60])
                 if R.GROUP_TAIL.match(sb) and len(sb.split()) <= R.GROUP_TAIL_MAX_WORDS:
