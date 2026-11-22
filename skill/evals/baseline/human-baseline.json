@@ -8,14 +8,14 @@
     "blog": {
       "files": 38,
       "words": 74191,
-      "findings": 691,
-      "rate_per_1k": 9.31
+      "findings": 635,
+      "rate_per_1k": 8.56
     },
     "paper": {
       "files": 1,
       "words": 12996,
-      "findings": 144,
-      "rate_per_1k": 11.08
+      "findings": 115,
+      "rate_per_1k": 8.85
     }
   }
 }

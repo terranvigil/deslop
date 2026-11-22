@@ -76,6 +76,18 @@ class Detector:
                     continue
                 self.add(rule, layer, sev, label, fix, b.start + m.start(), b.start + m.end(), m.group(0))
 
+    def gate_hitched(self):
+        src = self.doc.src
+        keep, hitched = [], []
+        for f in self.findings:
+            if f.rule not in R.HITCHED_DENSITY_RULES:
+                keep.append(f)
+            elif not R.HITCHED_OPENER.search(src[max(0, f.start - 80):f.start]):
+                hitched.append(f)
+        if len(hitched) * 1000 > R.HITCHED_PER_1K * max(1, self.metrics["words_prose"]):
+            keep += hitched
+        self.findings = keep
+
     # -------------------------------------------------------------- pattern rules
     def run_patterns(self):
         d = self.doc
@@ -384,6 +396,7 @@ class Detector:
     def run(self):
         self.metrics = {"words": self.doc.words(), "words_prose": len(self.doc.prose.split())}
         self.run_patterns()
+        self.gate_hitched()
         self.run_document()
         self.run_metrics()
         if self.pr:

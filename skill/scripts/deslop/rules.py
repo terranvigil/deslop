@@ -386,6 +386,15 @@ APHORISTIC_ECHO = re.compile(r"^That (takes|is|was|does|means) [a-z']+\.$")
 # overall: human 0.3-0.45 per 1000, generated 4-4.8.
 EVERY_MIN = 5
 EVERY_PER_1K = 4.5
+# ", while" and ", which" are ordinary in human technical prose: over 25
+# pre-LLM documents with any hits, the two rules together peak at 3.1 per
+# 1000 prose words (median under 1). flag them only above that density, so a
+# document has to lean on the habit before any instance counts.
+HITCHED_DENSITY_RULES = frozenset({"hitched-while", "hitched-which"})
+HITCHED_PER_1K = 3.5
+# "Furthermore, since ..." or "Overall, while ...": the comma closes a
+# one-word sentence opener, so nothing is hitched onto a first fact.
+HITCHED_OPENER = re.compile(r"(?:^|[.!?:]\s+)\W*\w+\W*$")
 SELFDESC_OPENERS = frozenset("each every all both".split())
 SELFDESC_MAX_WORDS = 10
 SELFDESC_NOUN = re.compile(r"\b(answers?|charts?|pages?|sections?|tables?|links?|data|figures?|rows?|numbers?|results?|entr(y|ies)|items?|examples?|graphs?|cells?|scripts?|sources?|claims?|readings?|options?)\b", I)
