@@ -27,12 +27,17 @@ from deslop import pr as PR  # noqa: E402
 TESTDATA = os.path.join(SCRIPTS, "testdata")
 
 
+def read_text(path):
+    with open(path, encoding="utf-8") as fh:
+        return fh.read()
+
+
 def registry() -> set[str]:
     """every fixed rule id the detector can emit, read from the rule table
     and from detect.py's own add() calls, so a new rule can't dodge the
     check by not being listed anywhere."""
     ids = {p[0] for p in R.PATTERNS} | {"quantifier-tail"}
-    src = open(os.path.join(SCRIPTS, "deslop", "detect.py"), encoding="utf-8").read()
+    src = read_text(os.path.join(SCRIPTS, "deslop", "detect.py"))
     ids |= set(re.findall(r'self\.add\("([a-z0-9-]+)"', src))
     ids |= {"contrast:" + name for name, _ in C.COMPILED}
     return ids
@@ -42,8 +47,7 @@ def all_examples() -> dict:
     ex = dict(EXAMPLES)
     ex.update(doc_examples())
     for rule, (dirty, clean) in FILE_EXAMPLES.items():
-        read = lambda f: open(os.path.join(TESTDATA, f), encoding="utf-8").read()  # noqa: E731
-        ex[rule] = (read(dirty), read(clean))
+        ex[rule] = (read_text(os.path.join(TESTDATA, dirty)), read_text(os.path.join(TESTDATA, clean)))
     return ex
 
 
@@ -55,7 +59,7 @@ class PrRuleExamples(unittest.TestCase):
     """the --pr rules, run in PR mode."""
 
     def test_every_pr_rule_has_an_example(self):
-        src = open(os.path.join(SCRIPTS, "deslop", "pr.py"), encoding="utf-8").read()
+        src = read_text(os.path.join(SCRIPTS, "deslop", "pr.py"))
         emitted = set(re.findall(r'det\.add\("([a-z0-9-]+)"', src))
         self.assertEqual(emitted, set(PR.RULES), "pr.RULES and pr.py's add() calls disagree")
         self.assertEqual(sorted(set(PR.RULES) - set(pr_examples())), [], "--pr rules with no example")

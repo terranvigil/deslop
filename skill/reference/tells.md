@@ -414,6 +414,22 @@ document above 4.5 per 1000 words as `every-habit`.
    - Before: "The ladders score every frame of every clip, and every cell is checked on every machine."
    - After: "The ladders score all the frames of each clip, and the cells are checked on all three machines."
 
+27w. **Attachment fog in provenance lines.** [discourse] A sentence puts a
+caption, a source, a script and a download in one pile, then leaves the
+reader to infer their relationships from "under", "beside", "it" or
+"its". The sentence can be grammatically correct while still making a
+reader stop and redraw it. Make the thing that owns the metadata the
+subject, give the script's output a name, and say what the link opens.
+   - Before: "Under each chart a line names its source file and the script that drew it, beside a link to its data as CSV."
+   - After: "Each chart's caption names the source file and the script that drew the chart, and links to the chart's data as CSV."
+   - A link to a download the reader can't see from here falls under 27s's
+     exception, so keep it and make its attachment clear; don't delete it.
+   - Ask three questions: Does every pronoun have one possible referent? Does
+     each prepositional phrase attach to one clear thing? Does the sentence
+     name the object that a script generated or a link opens? This is a
+     judgment call, not a regex rule. The checker can find a construction it
+     dislikes and miss this problem entirely.
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they

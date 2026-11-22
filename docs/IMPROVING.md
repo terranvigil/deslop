@@ -70,7 +70,12 @@ scripts/gate.sh               # every eval gate
    rule so the diff shows what moved.
 
 A judgment call that a regex can't catch goes in `skill/reference/tells.md`
-as an entry with a before/after pair, not in the detector.
+as an entry with a before/after pair, not in the detector. If the fixer must
+catch it even when the scanner reports nothing, add a scanner-clean fixture
+and manual acceptance criteria in `skill/evals/EXPECTATIONS.md`.
+`metadata-prose.md` is the model: ambiguous attachments and pronoun
+referents belong in semantic review, not a broad regex that punishes normal
+technical sentences.
 
 ## Loosening or removing a rule
 

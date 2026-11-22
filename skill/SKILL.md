@@ -260,7 +260,15 @@ headed Details is left out of the budget, the density and the code count. For th
    intro and the recap outro, merge symmetric sections, and let the hard
    part take more room than the easy parts. Sentence polish on a section
    you should have cut is wasted.
-2. Draft or revise from the underlying meaning, following the recipe.
+2. Draft or revise from the underlying meaning, following the recipe. Before
+   checking it, make one semantic sweep that the script cannot do. Make the
+   thing that carries metadata the subject of its sentence: a caption names
+   things, a link opens or points somewhere, a table shows values. Do not
+   leave the relationship as furniture around a sentence ("under X", "beside
+   Y"). Repeat the needed noun when `it`, `its`, `this`, or `them` could name
+   more than one thing. A sentence fails this sweep when a reader can draw two
+   plausible diagrams of what modifies, links to, or produced what. This is a
+   readability check, not a new list of forbidden constructions.
 3. Save the prose to a file (a scratch file if it's headed for chat or
    Slack) and run the script on it directly. It's an executable shell
    script, so don't prefix it with `python3`:

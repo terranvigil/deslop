@@ -16,7 +16,9 @@ skill is read cold with no conversation context.
    exit 0, except for findings the reviser kept on purpose and named in
    its report, which workflow step 4 allows. The slack fixture's one emoji
    is the standing example. The script flags every emoji. The register
-   allows one, so keeping it is the right call.
+   allows one, so keeping it is the right call. `metadata-prose.md` starts
+   at zero findings on purpose: it checks the semantic sweep, so a zero
+   score alone is not a passing revision.
 3. Check the lists below by reading the output.
 4. Delete the out-*.md files afterward. They aren't committed.
 
@@ -63,3 +65,9 @@ Expect the same counts or a change you meant to make, then re-record with
 - pr-description.md: reads as where the change stands, in under about 250
   words, with no "Introduction" or "Conclusion". Headers are specific or absent. The generation times
   survive. The closing paragraph makes one concrete claim or is cut.
+- metadata-prose.md: every sentence is scanner-clean but still needs work.
+  A caption, table, or source line becomes the subject that names, links to,
+  or shows something. A script is said to generate its named output. Every
+  `it`, `its`, and spatial phrase has one clear attachment. The rewrite keeps
+  the source-file, script, CSV, metric, date, and raw-data claims without
+  adding details the fixture does not give.
