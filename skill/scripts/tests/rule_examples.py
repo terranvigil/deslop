@@ -129,6 +129,7 @@ EXAMPLES = {
     "appositive-heading:caption": ("**Lockers, by neighborhood**", "**Lockers by neighborhood**"),
     "symmetric-bullets": ("- **When:** Saturday mornings.\n- **Where:** the church hall.\n- **Cost:** free for members.", "- Saturday mornings\n- in the church hall, parking out back\n- free for members"),
     # --- families -------------------------------------------------------------
+    "word:headline": ("The headline is a 20% drop in wait times.", "Wait times dropped 20%."),
     "word:leverage": ("We leverage the waitlist to fill cancellations.", "The clinic fills cancellations from its waitlist."),
     "word:robust": ("The kiosk needs a robust paper feed.", "The kiosk needs a paper feed that doesn't jam."),
     "phrase:it's important to note": ("Families, it's important to note, must bring ID.", "Families must bring ID."),

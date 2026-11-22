@@ -45,10 +45,11 @@ navigate navigates navigating
 firstly secondly necessitate necessitates necessitating revolutionize
 revolutionizes amidst palpable camaraderie solace cacophony nestled renowned
 enhance enhances enhancing enhanced emphasizing highlighting resonate
-resonates individuals insights valuable ever-evolving""".split()
+resonates individuals insights valuable ever-evolving headline headlines""".split()
 
 _WORD_FIX = [
     (r"leverage", "use"),
+    (r"headline", "name the figure ('the 1.8x') or say 'the main result'; fine for a real news headline"),
     (r"utilize", "use"),
     (r"facilitat", "help"),
     (r"comprehensive$", "full, complete"),
