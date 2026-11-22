@@ -16,7 +16,10 @@ Two modes:
   or change claims. Inflation with no fact under it isn't a claim, so a
   closing paragraph that only asserts significance can go, and so can an
   unsourced "industry reports suggest". Every fact, name, number and
-  direction of change survives.
+  direction of change survives, except in a page that explains or answers
+  questions (docs, an FAQ, a guide). There, a detail the reader won't act
+  on goes, even when it's true, as Simplify below says. Name what you cut
+  in the report line.
   Table cells are prose too, so revise them with the rest.
   The stance rule below still applies, but a stance you add has to come from
   a commitment the document already makes. If it endorses an approach,
@@ -155,6 +158,20 @@ and figure is something the reader has to stop and decode.
   [capture data contract](url)", never a path or URL as the visible text.
 - In a doc that explains, keep only the figures a reader acts on. The rest
   belong in the source the doc links to.
+
+## Simplify
+
+Generated writing piles on true details, and a reader drowns in them. The
+answer they came for gets lost. Each sentence should carry something the
+reader needs for the question at hand. Provenance, build channels,
+per-machine settings and how a tool was run all belong on the page that
+links out, not in the answer. When a sentence offers a link to the
+specifics, it names one or two of them, not every one.
+- Before: "x265 4.3 at medium, as Homebrew ships it on the Mac. The cloud machines built it from the release tarball. [How x265 was run](x265-run.md) has the exact build, the command for each goal, the thread settings and the instruction sets on each machine."
+- After: "x265 4.3 at medium. [How x265 was run](x265-run.md) has the exact build and the command for each goal."
+
+Don't add detail while revising. If a draft grows, it should be because a
+missing answer was put in, not because you made the text more complete.
 
 ## Register
 
@@ -333,6 +350,7 @@ asks for it. The report stays one or two lines.
 - [ ] Nothing is defined by what it isn't ("it's X, not Y", "isn't X, it's Y", negated headings), and there's no manufactured foil in the affirmative forms either ("X rather than Y", "as opposed to Y"). A foil stays only when Y was a real option, a rejected decision, or a live misconception. When the source's own claim is a contrast, keep it once and state it plainly
 - [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
+- [ ] Nothing the reader won't act on: no provenance, build or per-machine detail in an answer that links to a page holding it, and no link sentence listing everything behind the link
 - [ ] No afterthought tail: no short sentence after the point ("It never texts twice.") that adds a side effect, a disclaimer or an obvious inverse the reader won't act on, and none describing the page's own format ("Each answer links to the data.")
 - [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Clauses joined by a subordinating word (because, until, although) are fine. Some sentences run long
 - [ ] At most one semicolon in the document
