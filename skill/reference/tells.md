@@ -436,6 +436,11 @@ subject, give the script's output a name, and say what the link opens.
    - Before: "yah265's lead is wider on the worst frames. [Results](results.md) has the figures."
    - After: "yah265's lead is wider on the [worst frames](results.md)."
 
+27y. **Stacked trailing modifiers.** [structural] The verb and object come first, then a chain of phrases hangs off the end, each attached to the one before: "X does Y from the Z on the W that V gives it." The reader has to walk the chain backward to find what each phrase modifies, and the hidden relative clause at the end ("the frames ffmpeg hands it") often ends on a pronoun that points two steps back. Say where the thing comes from in one short phrase, or split the chain into two sentences.
+   - Before: "libyah265 writes the color flags from the tags on the frames ffmpeg hands it."
+   - After: "libyah265 takes its color flags from the source's tags."
+   - Test: count the prepositional and relative links after the object. Two is normal. Three or more, or a chain that ends on "it" or "them", wants a rewrite. This is a judgment call; the checker doesn't flag it.
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they
