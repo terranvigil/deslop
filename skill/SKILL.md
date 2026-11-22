@@ -369,6 +369,7 @@ asks for it. The report stays one or two lines.
 - [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
 - [ ] A newcomer reads each sentence once: no sentence juggles several of the page's own terms or explains a distinction nobody asked about
+- [ ] No mirror pairs: a sentence followed by its inverse on the same frame ("...less on a likely outcome. An unlikely one costs more."). Keep one side, or both in one sentence when the contrast is the point
 - [ ] No stacked trailing modifiers ("from the tags on the frames ffmpeg hands it"): one short phrase for where a thing comes from, or two sentences
 - [ ] No trailing pointer sentences ("[Page](x.md) lists them.", "The guide explains why."): link the words the page explains, or say "See [page]"
 - [ ] Nothing the reader won't act on: no provenance, build or per-machine detail in an answer that links to a page holding it, and no link sentence listing everything behind the link
