@@ -84,7 +84,10 @@ class Detector:
                 keep.append(f)
             elif not R.HITCHED_OPENER.search(src[max(0, f.start - 80):f.start]):
                 hitched.append(f)
-        if len(hitched) * 1000 > R.HITCHED_PER_1K * max(1, self.metrics["words_prose"]):
+        # same blocks the patterns scanned, tables included, so a table-only
+        # document doesn't divide by zero prose words
+        words = sum(len(b.text.split()) for b in self.doc.blocks)
+        if len(hitched) >= R.HITCHED_MIN and len(hitched) * 1000 > R.HITCHED_PER_1K * max(1, words):
             keep += hitched
         self.findings = keep
 

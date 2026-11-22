@@ -100,6 +100,32 @@ class SelfDescriptionTail(unittest.TestCase):
                 self.assertNotIn("afterthought-tail", fired(text))
 
 
+class HitchedDensity(unittest.TestCase):
+    """hitched-which and hitched-while count only when a document leans on them."""
+
+    FILLER = " ".join(["The pool opens at six on weekdays and the gym opens at seven."] * 20)
+    HITCHED = ("The lanes were full by noon, which gave the staff a shock. "
+               "The sauna stayed empty, while the hot tub had a queue. "
+               "The cafe ran out of milk, which is rare on a Sunday. "
+               "Lessons ran late, whereas the gym closed on time. ")
+
+    def test_one_hit_in_a_short_note_quiet(self):
+        self.assertNotIn("hitched-which", fired("The pool reopens Monday, which is a relief."))
+
+    def test_one_hit_in_a_table_quiet(self):
+        table = "| Day | Note |\n|---|---|\n| Monday | Reopens, which is a relief |\n"
+        self.assertNotIn("hitched-which", fired(table))
+
+    def test_sentence_opener_quiet(self):
+        text = " ".join(["Furthermore, since the pool is shut we swim in the lake."] * 4)
+        self.assertNotIn("hitched-while", fired(text))
+
+    def test_several_hits_in_a_normal_document_fire(self):
+        got = fired(self.FILLER + " " + self.HITCHED + self.FILLER)
+        self.assertIn("hitched-which", got)
+        self.assertIn("hitched-while", got)
+
+
 class RuleExamples(unittest.TestCase):
     def test_every_rule_has_an_example(self):
         have = {k.split(":caption")[0] for k in all_examples()}

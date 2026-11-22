@@ -388,10 +388,12 @@ EVERY_MIN = 5
 EVERY_PER_1K = 4.5
 # ", while" and ", which" are ordinary in human technical prose: over 25
 # pre-LLM documents with any hits, the two rules together peak at 3.1 per
-# 1000 prose words (median under 1). flag them only above that density, so a
-# document has to lean on the habit before any instance counts.
+# 1000 words (median under 1). flag them only above that density and with
+# at least three hits, so one ordinary clause in a short note or a table
+# cell doesn't count.
 HITCHED_DENSITY_RULES = frozenset({"hitched-while", "hitched-which"})
 HITCHED_PER_1K = 3.5
+HITCHED_MIN = 3
 # "Furthermore, since ..." or "Overall, while ...": the comma closes a
 # one-word sentence opener, so nothing is hitched onto a first fact.
 HITCHED_OPENER = re.compile(r"(?:^|[.!?:]\s+)\W*\w+\W*$")

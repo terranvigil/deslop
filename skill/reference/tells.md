@@ -422,7 +422,7 @@ reader stop and redraw it. Make the thing that owns the metadata the
 subject, give the script's output a name, and say what the link opens.
    - Before: "Under each chart a line names its source file and the script that drew it, beside a link to its data as CSV."
    - After: "Each chart's caption names the source file and the script that drew the chart, and links to the chart's data as CSV."
-   - A link to a download the reader can't see from here falls under 27s's
+   - A link to a download the reader can't see from here falls under 27u's
      exception, so keep it and make its attachment clear; don't delete it.
    - Ask three questions: Does every pronoun have one possible referent? Does
      each prepositional phrase attach to one clear thing? Does the sentence
