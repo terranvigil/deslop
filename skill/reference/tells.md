@@ -386,6 +386,12 @@ reader does. The checker hints at the form as `afterthought-tail`.
    - Before: "Members can switch the reminders on in their account. They can switch them off there too."
    - After: "Members switch the reminders on or off in their account."
 
+   The tail can also hang off the end of a sentence as a clause: ",
+   whichever way it points", ", either way", ", regardless of the
+   result". It defends against an objection nobody raised. Cut the clause.
+   - Before: "A cell that breaks a rule stays out of the statistics, whichever way it points."
+   - After: "A cell that breaks a rule stays out of the statistics."
+
    A sibling form describes the document's own format or sources: "Each
    short answer links to the data.", "Every chart comes from one script."
    It opens on each, every, all or both, and the reader sees what it

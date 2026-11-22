@@ -352,7 +352,7 @@ asks for it. The report stays one or two lines.
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
 - [ ] Nothing the reader won't act on: no provenance, build or per-machine detail in an answer that links to a page holding it, and no link sentence listing everything behind the link
 - [ ] "Every" only where completeness matters to the reader, not on claim after claim to sound thorough
-- [ ] No afterthought tail: no short sentence after the point ("It never texts twice.") that adds a side effect, a disclaimer or an obvious inverse the reader won't act on, and none describing the page's own format ("Each answer links to the data.")
+- [ ] No afterthought tail: no short sentence after the point ("It never texts twice.") that adds a side effect, a disclaimer or an obvious inverse the reader won't act on, no defensive clause tacked on the end (", whichever way it points"), and none describing the page's own format ("Each answer links to the data.")
 - [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Clauses joined by a subordinating word (because, until, although) are fine. Some sentences run long
 - [ ] At most one semicolon in the document
 - [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL
