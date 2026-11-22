@@ -396,6 +396,18 @@ reader does. The checker hints at the form as `afterthought-tail`.
    - Before: "These are the questions I'd ask about the clinic. Each short answer links to the policy."
    - After: "These are the questions I'd ask about the clinic."
 
+27v. **"Every" as a habit.** [lexical] Generated technical prose puts a
+universal quantifier on claim after claim: "scores every frame", "every
+cell", "on every machine", "every option links to its row". It sounds
+thorough. It reads as insistence, and the reader starts to wonder what the
+writer is defending. Human technical prose uses "every" about once in 2,500
+words; generated docs use it ten times as often. Say what was done ("scores
+the frames", "the ten clips"). Keep "every" where the completeness is the
+point and missing one would matter to the reader. The checker flags a
+document above 4.5 per 1000 words as `every-habit`.
+   - Before: "The ladders score every frame of every clip, and every cell is checked on every machine."
+   - After: "The ladders score all the frames of each clip, and the cells are checked on all three machines."
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they

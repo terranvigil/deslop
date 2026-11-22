@@ -171,6 +171,11 @@ class Detector:
                 s, e, t = first(re.compile(r"\b" + w + r"\b", re.I))
                 self.add("overused:" + w, "lexical", 3, f"overused word '{w}' ({n} times)", "keep it where it's the established term; name the concrete thing elsewhere", s, e, t)
 
+        # "every" as a habit: a universal quantifier on claim after claim
+        n, s_, e_, t_ = over_blocks(re.compile(r"\bevery\b", re.I))
+        if n >= R.EVERY_MIN and n * 1000 > R.EVERY_PER_1K * words_prose:
+            self.add("every-habit", "lexical", 2, f"'every' as a habit ({n} in {words_prose} words)", "say what was done ('scores the frames', 'the ten clips'); keep 'every' only where missing one would matter", s_, e_, t_)
+
         # colon-splice cadence: 5+ and denser than 1 per 240 words. the script
         # said 1 per 20 non-blank lines, which depends on wrap width; 240 words
         # is that threshold at a typical 12-word line.

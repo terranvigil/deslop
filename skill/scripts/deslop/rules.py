@@ -379,6 +379,13 @@ APHORISTIC_ECHO = re.compile(r"^That (takes|is|was|does|means) [a-z']+\.$")
 # sourcing, which keeps out "Each lane holds six swimmers." measured: 0 in
 # 178k words of pre-LLM technical prose and 0 in 44k of one writer's own,
 # against 4 in 780k words of generated docs and sites.
+# "every" density (tells.md 27v): generated docs lean on it to sound
+# thorough. measured over documents of 300+ words: above 4.5 per 1000 with
+# 5 or more uses, 0 of 110 human documents (178k words of technical prose
+# plus one writer's own) and 12 of 27 generated site pages. the rates
+# overall: human 0.3-0.45 per 1000, generated 4-4.8.
+EVERY_MIN = 5
+EVERY_PER_1K = 4.5
 SELFDESC_OPENERS = frozenset("each every all both".split())
 SELFDESC_MAX_WORDS = 10
 SELFDESC_NOUN = re.compile(r"\b(answers?|charts?|pages?|sections?|tables?|links?|data|figures?|rows?|numbers?|results?|entr(y|ies)|items?|examples?|graphs?|cells?|scripts?|sources?|claims?|readings?|options?)\b", I)
@@ -448,7 +455,7 @@ FIX_SCOPE = {
                   "symmetric-bullets", "italic-subtitle", "pr-results-table", "pr-untracked-open-item"},
     "document": {"colon-splice", "semicolon-chain", "authorless", "no-hedges", "flat-rhythm", "dash-budget",
                  "participial-rate", "even-section-weight", "thematic-breaks", "rule-of-three",
-                 "contrast-habit", "name-drift", "overused", "llm-adverb", "pr-length", "pr-number-dense"},
+                 "contrast-habit", "name-drift", "overused", "every-habit", "llm-adverb", "pr-length", "pr-number-dense"},
 }
 
 
