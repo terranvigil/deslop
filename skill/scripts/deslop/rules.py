@@ -397,6 +397,16 @@ HITCHED_MIN = 3
 # "Furthermore, since ..." or "Overall, while ...": the comma closes a
 # one-word sentence opener, so nothing is hitched onto a first fact.
 HITCHED_OPENER = re.compile(r"(?:^|[.!?:]\s+)\W*\w+\W*$")
+# trailing pointer sentence (tells.md 27x): after a fact, a short sentence
+# whose subject is a link or "the guide/page" and whose verb only points
+# ("[Options] lists them."). measured: 0 in 235k words of human prose (the
+# baseline plus one writer's own), 46 in 57k words of one generated site.
+# links only: "the lottery page shows" is content, not a pointer.
+POINTER_TAIL = re.compile(
+    r"^(?:the |a |see )?\[[^\]]+\]"
+    r"(?: page| section)? (?:lists?|has|have|shows?|explains?|covers?|says|gives?|describes?|sets out|walks through|holds?|details?|tells?)\b[^.]{0,80}\.$",
+    I)
+POINTER_MAX_WORDS = 14
 SELFDESC_OPENERS = frozenset("each every all both".split())
 SELFDESC_MAX_WORDS = 10
 SELFDESC_NOUN = re.compile(r"\b(answers?|charts?|pages?|sections?|tables?|links?|data|figures?|rows?|numbers?|results?|entr(y|ies)|items?|examples?|graphs?|cells?|scripts?|sources?|claims?|readings?|options?)\b", I)
@@ -462,7 +472,7 @@ CODE_PATH = re.compile(r"`[\w.-]*/[\w./-]*\.[A-Za-z]{1,5}`")
 
 FIX_SCOPE = {
     "paragraph": {"monotone-rhythm", "fresh-subjects", "number-dense-sentence", "number-dense-paragraph",
-                  "fact-dense-paragraph", "afterthought-tail",
+                  "fact-dense-paragraph", "afterthought-tail", "pointer-tail",
                   "symmetric-bullets", "italic-subtitle", "pr-results-table", "pr-untracked-open-item"},
     "document": {"colon-splice", "semicolon-chain", "authorless", "no-hedges", "flat-rhythm", "dash-budget",
                  "participial-rate", "even-section-weight", "thematic-breaks", "rule-of-three",

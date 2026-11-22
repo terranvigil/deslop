@@ -296,6 +296,20 @@ class Detector:
                 if n <= R.AFTERTHOUGHT_MAX_WORDS:
                     self.add("afterthought-tail", "discourse", 1, "afterthought tail (short sentence leaning back on the last)", "delete it if the reader loses nothing they'd act on; fold it in only if it's a real second fact", b.start + i, b.start + cur, s[:60])
 
+        # trailing pointer sentence: a link that only points, after a fact
+        for b in d.prose_blocks:
+            if b.kind not in ("paragraph", "item"):
+                continue
+            cur = 0
+            for k, s in enumerate(sentences(b.text)):
+                i = b.text.find(s, cur)
+                i = cur if i < 0 else i
+                cur = i + len(s)
+                flat = " ".join(s.split())
+                if k == 0 or len(flat.split()) > R.POINTER_MAX_WORDS or not R.POINTER_TAIL.match(flat):
+                    continue
+                self.add("pointer-tail", "structural", 1, "trailing pointer sentence (a link that only points at a page)", "link the words the page explains, or say 'See [page]'", b.start + i, b.start + cur, flat[:60])
+
         # table values restated in prose
         table_text = "\n".join(l for l in cleaned.split("\n") if l.strip().startswith("|") or l.count("|") >= 2)
         if table_text.strip():
