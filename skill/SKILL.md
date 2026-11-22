@@ -369,6 +369,7 @@ asks for it. The report stays one or two lines.
 - [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
 - [ ] A newcomer reads each sentence once: no sentence juggles several of the page's own terms or explains a distinction nobody asked about
+- [ ] No trailing pointer sentences ("[Page](x.md) lists them.", "The guide explains why."): link the words the page explains, or say "See [page]"
 - [ ] Nothing the reader won't act on: no provenance, build or per-machine detail in an answer that links to a page holding it, and no link sentence listing everything behind the link
 - [ ] "Every" only where completeness matters to the reader, not on claim after claim to sound thorough
 - [ ] No afterthought tail: no short sentence after the point ("It never texts twice.") that adds a side effect, a disclaimer or an obvious inverse the reader won't act on, no defensive clause tacked on the end (", whichever way it points"), and none describing the page's own format ("Each answer links to the data.")

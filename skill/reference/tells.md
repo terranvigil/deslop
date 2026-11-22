@@ -430,6 +430,12 @@ subject, give the script's output a name, and say what the link opens.
      judgment call, not a regex rule. The checker can find a construction it
      dislikes and miss this problem entirely.
 
+27x. **Trailing pointer sentence.** [structural] A fact, then a second sentence whose only job is to point at a page: "SIMD on arm64 and x86-64. [Architectures](a.md) lists what runs where.", "[Results](r.md) has the figures.", "The guide explains why." One or two in a long page are fine. As a habit, and in list items above all, it reads generated. Put the link on the words it explains, or say "See [page]" when the link has no natural anchor.
+   - Before: "x265's option names for shared features. [Options](options.md) lists them."
+   - After: "x265's [option names](options.md) for shared features."
+   - Before: "yah265's lead is wider on the worst frames. [Results](results.md) has the figures."
+   - After: "yah265's lead is wider on the [worst frames](results.md)."
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they
