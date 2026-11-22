@@ -170,6 +170,16 @@ specifics, it names one or two of them, not every one.
 - Before: "x265 4.3 at medium, as Homebrew ships it on the Mac. The cloud machines built it from the release tarball. [How x265 was run](x265-run.md) has the exact build, the command for each goal, the thread settings and the instruction sets on each machine."
 - After: "x265 4.3 at medium. [How x265 was run](x265-run.md) has the exact build and the command for each goal."
 
+Watch concept load too. A sentence that makes the reader hold several of
+the page's own terms at once ("capped VBR", "headline cells", "target
+bitrate") and a distinction between them is hard to read even when it's
+short, and no pattern catches it. Reread each paragraph as a newcomer
+who knows the field but not this page. Flag any sentence you'd have to
+read twice, or that explains a distinction the reader didn't ask about.
+Then say the basic fact and stop.
+- Before: "Capped VBR has its own tables because its files share a target bitrate where the headline cells share a size."
+- After: "Capped VBR has its own tables."
+
 Don't add detail while revising. If a draft grows, it should be because a
 missing answer was put in, not because you made the text more complete.
 
@@ -350,6 +360,7 @@ asks for it. The report stays one or two lines.
 - [ ] Nothing is defined by what it isn't ("it's X, not Y", "isn't X, it's Y", negated headings), and there's no manufactured foil in the affirmative forms either ("X rather than Y", "as opposed to Y"). A foil stays only when Y was a real option, a rejected decision, or a live misconception. When the source's own claim is a contrast, keep it once and state it plainly
 - [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
+- [ ] A newcomer reads each sentence once: no sentence juggles several of the page's own terms or explains a distinction nobody asked about
 - [ ] Nothing the reader won't act on: no provenance, build or per-machine detail in an answer that links to a page holding it, and no link sentence listing everything behind the link
 - [ ] "Every" only where completeness matters to the reader, not on claim after claim to sound thorough
 - [ ] No afterthought tail: no short sentence after the point ("It never texts twice.") that adds a side effect, a disclaimer or an obvious inverse the reader won't act on, no defensive clause tacked on the end (", whichever way it points"), and none describing the page's own format ("Each answer links to the data.")
