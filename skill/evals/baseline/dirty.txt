@@ -134,6 +134,7 @@ line 126: banned phrase 'represents a' -> is a
 line 131: banned phrase 'on the one hand' -> cut the frame; state the position
 line 132: banned word 'honestly' -> honesty is assumed in tech docs; state the limit or cost plainly
 line 132: banned phrase 'it depends' -> say what it depends on, or commit
+line 132: group tail (a short 'Both/Each ...' summing up the sentences before) -> fold the shared fact into the sentences it covers, or cut it
 line 132: banned phrase 'both approaches have' -> say which one you picked and why
 line 133: banned phrase 'there are trade-offs' -> name the actual trade-off, or commit
 line 133: second clause joined by ", and", ", but" or ", so" -> two facts in one sentence: split at the comma
@@ -154,5 +155,5 @@ line 158: throat-clearing preamble -> cut it; say the thing
 line 159: vague quantity filler -> name them, give the count, or cut the phrase
 line 160: throat-clearing preamble -> cut it; say the thing
 line 161: hedge stack (4 hedges in one sentence) -> keep the one hedge the uncertainty needs, or commit
-clusters: line 5 (4 findings), line 7 (3 findings), line 9 (41 findings), line 36 (6 findings), line 42 (4 findings), line 45 (3 findings), line 53 (3 findings), line 56 (4 findings), line 59 (3 findings), line 65 (6 findings), line 69 (12 findings), line 93 (4 findings), line 108 (7 findings), line 114 (4 findings), line 118 (7 findings), line 125 (4 findings), line 131 (9 findings), line 138 (5 findings), line 158 (5 findings)
-exit 156
+clusters: line 5 (4 findings), line 7 (3 findings), line 9 (41 findings), line 36 (6 findings), line 42 (4 findings), line 45 (3 findings), line 53 (3 findings), line 56 (4 findings), line 59 (3 findings), line 65 (6 findings), line 69 (12 findings), line 93 (4 findings), line 108 (7 findings), line 114 (4 findings), line 118 (7 findings), line 125 (4 findings), line 131 (10 findings), line 138 (5 findings), line 158 (5 findings)
+exit 157

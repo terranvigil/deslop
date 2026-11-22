@@ -296,6 +296,25 @@ class Detector:
                 if n <= R.AFTERTHOUGHT_MAX_WORDS:
                     self.add("afterthought-tail", "discourse", 1, "afterthought tail (short sentence leaning back on the last)", "delete it if the reader loses nothing they'd act on; fold it in only if it's a real second fact", b.start + i, b.start + cur, s[:60])
 
+        # mirror pairs and group tails: adjacent sentences in one paragraph
+        for b in d.prose_blocks:
+            if b.kind != "paragraph":
+                continue
+            sents, cur = [], 0
+            for s in sentences(b.text):
+                i = b.text.find(s, cur)
+                i = cur if i < 0 else i
+                cur = i + len(s)
+                sents.append((i, cur, " ".join(s.split())))
+            for (ia, ea, sa), (ib, eb, sb) in zip(sents, sents[1:]):
+                wa = set(re.findall(r"[a-z]+", sa.lower())); wb = set(re.findall(r"[a-z]+", sb.lower()))
+                if (len(sa.split()) <= R.MIRROR_MAX_FIRST and len(sb.split()) <= R.MIRROR_MAX_SECOND
+                        and not (wa | wb) & R.MIRROR_CONTRAST
+                        and any((x in wa and y in wb) or (y in wa and x in wb) for x, y in R.MIRROR_PAIRS)):
+                    self.add("mirror-pair", "structural", 1, "mirror pair (a sentence followed by its inverse)", "keep the side the reader needs; put both in one sentence only when the contrast is the point", b.start + ib, b.start + eb, sb[:60])
+                if R.GROUP_TAIL.match(sb) and len(sb.split()) <= R.GROUP_TAIL_MAX_WORDS:
+                    self.add("group-tail", "structural", 1, "group tail (a short 'Both/Each ...' summing up the sentences before)", "fold the shared fact into the sentences it covers, or cut it", b.start + ib, b.start + eb, sb[:60])
+
         # trailing pointer sentence: a link that only points, after a fact
         for b in d.prose_blocks:
             if b.kind not in ("paragraph", "item"):

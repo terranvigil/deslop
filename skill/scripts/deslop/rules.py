@@ -408,6 +408,24 @@ POINTER_TAIL = re.compile(
     r"(?: page| section)? (?:lists?|has|have|shows?|explains?|covers?|says|gives?|describes?|sets out|walks through|holds?|details?|tells?)\b[^.]{0,80}\.$",
     I)
 POINTER_MAX_WORDS = 14
+# mirror pair (tells.md 27z): a short sentence that repeats the frame of
+# the one before with a word pair swapped ("...less than a bit on a likely
+# outcome. An unlikely one costs more than a bit."). measured on adjacent
+# sentence pairs: 0.01 per 1000 words of human prose (one sentence of one
+# paper) against 0.14 on a generated docs site.
+MIRROR_PAIRS = (("likely", "unlikely"), ("less", "more"), ("fewer", "more"), ("small", "large"),
+                ("smaller", "larger"), ("short", "long"), ("shorter", "longer"), ("high", "low"),
+                ("higher", "lower"), ("cheap", "expensive"), ("fast", "slow"), ("faster", "slower"),
+                ("early", "late"), ("easy", "hard"), ("simple", "complex"), ("good", "bad"),
+                ("gains", "loses"), ("adds", "removes"), ("raises", "lowers"), ("dark", "bright"),
+                ("flat", "busy"), ("static", "moving"), ("near", "far"), ("wide", "narrow"), ("thin", "thick"))
+MIRROR_MAX_FIRST, MIRROR_MAX_SECOND = 22, 14
+MIRROR_CONTRAST = frozenset("but although while whereas".split())
+# group tail (tells.md 27z): after two or more parallel statements, a short
+# sentence that sums them up ("Both cost some bitrate.", "Each trails the
+# row above."). 0.01 per 1000 words human, 0.3 generated.
+GROUP_TAIL = re.compile(r"^(Both|Each|Either|All three|All of them)\b")
+GROUP_TAIL_MAX_WORDS = 8
 SELFDESC_OPENERS = frozenset("each every all both".split())
 SELFDESC_MAX_WORDS = 10
 SELFDESC_NOUN = re.compile(r"\b(answers?|charts?|pages?|sections?|tables?|links?|data|figures?|rows?|numbers?|results?|entr(y|ies)|items?|examples?|graphs?|cells?|scripts?|sources?|claims?|readings?|options?)\b", I)
@@ -473,7 +491,7 @@ CODE_PATH = re.compile(r"`[\w.-]*/[\w./-]*\.[A-Za-z]{1,5}`")
 
 FIX_SCOPE = {
     "paragraph": {"monotone-rhythm", "fresh-subjects", "number-dense-sentence", "number-dense-paragraph",
-                  "fact-dense-paragraph", "afterthought-tail", "pointer-tail",
+                  "fact-dense-paragraph", "afterthought-tail", "pointer-tail", "mirror-pair", "group-tail",
                   "symmetric-bullets", "italic-subtitle", "pr-results-table", "pr-untracked-open-item"},
     "document": {"colon-splice", "semicolon-chain", "authorless", "no-hedges", "flat-rhythm", "dash-budget",
                  "participial-rate", "even-section-weight", "thematic-breaks", "rule-of-three",

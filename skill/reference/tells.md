@@ -444,6 +444,8 @@ subject, give the script's output a name, and say what the link opens.
 27z. **Mirror pair.** [structural] A sentence, then its mirror image, so the second says what the reader just worked out from the first: "An arithmetic coder spends less than a bit on a likely outcome. An unlikely one costs more than a bit." "Small blocks keep detail. Large blocks save bits." It reads as balance, and it doubles the reading for one fact. Keep the side the reader needs and drop the inverse. When the contrast itself is the point, put both halves in one sentence.
    - Before: "With that estimate an arithmetic coder spends less than a bit on a likely outcome. An unlikely one costs more than a bit."
    - After: "With that estimate an arithmetic coder spends less than a bit on a likely outcome."
+   - The group form: after two or more parallel statements, a short sentence sums them up. "Tiles cut the picture into independent rectangles. Wavefront processing gives each row of CTUs its own start point. Both cost some bitrate." Fold the shared fact into the sentences it covers, or cut it.
+   - The checker flags both forms: `mirror-pair` (adjacent short sentences with a swapped word pair, no "but"/"while") and `group-tail` (a sentence of eight words or fewer opening on Both, Each, Either or All three). Measured: 0.01 per 1000 words of human prose for each, against 0.14 and 0.3 on a generated docs site.
    - It differs from 27u's obvious-inverse tail by length: both halves are full sentences built on the same frame, often with a word pair (likely/unlikely, small/large, less/more) swapped.
 
 ## Overcorrection
