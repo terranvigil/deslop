@@ -81,6 +81,21 @@ class PrRuleExamples(unittest.TestCase):
                 self.assertNotIn(rule, fired(dirty))
 
 
+class SelfDescriptionTail(unittest.TestCase):
+    def test_page_describing_itself_fires(self):
+        for text in ("These are the questions I'd ask about the site. Each short answer links to the data.",
+                     "The blog has five charts. Every chart comes from one script."):
+            with self.subTest(text=text):
+                self.assertIn("afterthought-tail", fired(text))
+
+    def test_ordinary_quantifier_sentence_quiet(self):
+        for text in ("The pool has six lanes. Each lane holds six swimmers.",
+                     "Each short answer links to the data.",
+                     "The club meets on Fridays. All members bring a towel."):
+            with self.subTest(text=text):
+                self.assertNotIn("afterthought-tail", fired(text))
+
+
 class RuleExamples(unittest.TestCase):
     def test_every_rule_has_an_example(self):
         have = {k.split(":caption")[0] for k in all_examples()}

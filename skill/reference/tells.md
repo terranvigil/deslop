@@ -386,6 +386,16 @@ reader does. The checker hints at the form as `afterthought-tail`.
    - Before: "Members can switch the reminders on in their account. They can switch them off there too."
    - After: "Members switch the reminders on or off in their account."
 
+   A sibling form describes the document's own format or sources: "Each
+   short answer links to the data.", "Every chart comes from one script."
+   It opens on each, every, all or both, and the reader sees what it
+   promises on the next line. It reads as a promise of rigor in place of
+   the rigor. Delete it. A sentence that tells the reader where to find
+   something they can't see from here (a download, a page elsewhere) isn't
+   this.
+   - Before: "These are the questions I'd ask about the clinic. Each short answer links to the policy."
+   - After: "These are the questions I'd ask about the clinic."
+
 ## Overcorrection
 
 The failure mode on the other side. These read worse than the AI tells they

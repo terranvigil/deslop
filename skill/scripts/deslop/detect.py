@@ -266,7 +266,11 @@ class Detector:
                 s = s.strip()
                 if k == 0 or not s or s.endswith(":") or R.APHORISTIC_ECHO.match(s) or R.AFTERTHOUGHT_HEDGED.search(s):
                     continue
-                if s.split()[0].lower() not in R.AFTERTHOUGHT_OPENERS:
+                first = s.split()[0].lower().strip("*_")
+                if first in R.SELFDESC_OPENERS and len(s.split()) <= R.SELFDESC_MAX_WORDS and R.SELFDESC_NOUN.search(s) and R.SELFDESC_VERB.search(s):
+                    self.add("afterthought-tail", "discourse", 1, "afterthought tail (the page describing its own format or sources)", "delete it: the reader sees the links and the data for themselves", b.start + i, b.start + cur, s[:60])
+                    continue
+                if first not in R.AFTERTHOUGHT_OPENERS:
                     continue
                 n = len(s.split()) + len(T.INLINE_CODE.findall(d.src[b.start + i:b.start + cur]))
                 if n <= R.AFTERTHOUGHT_MAX_WORDS:

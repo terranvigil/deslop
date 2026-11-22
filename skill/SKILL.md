@@ -333,7 +333,7 @@ asks for it. The report stays one or two lines.
 - [ ] Nothing is defined by what it isn't ("it's X, not Y", "isn't X, it's Y", negated headings), and there's no manufactured foil in the affirmative forms either ("X rather than Y", "as opposed to Y"). A foil stays only when Y was a real option, a rejected decision, or a live misconception. When the source's own claim is a contrast, keep it once and state it plainly
 - [ ] No correction residue: after a revision, nothing denies a claim that only an earlier draft or the conversation made ("X doesn't use Y" left over from a draft that said it did). State the current fact
 - [ ] No sentence paraphrases itself, and no stubby echo sentence ("That takes preferences.") restates the claim before it
-- [ ] No afterthought tail: no short sentence after the point ("It never texts twice.") that adds a side effect, a disclaimer or an obvious inverse the reader won't act on
+- [ ] No afterthought tail: no short sentence after the point ("It never texts twice.") that adds a side effect, a disclaimer or an obvious inverse the reader won't act on, and none describing the page's own format ("Each answer links to the data.")
 - [ ] No sentence has a second fact hitched on by a comma (an appositive, ", which", ", with", ", while", ", so", a participle like ", checked against"). No sentence has two non-list commas. Clauses joined by a subordinating word (because, until, although) are fine. Some sentences run long
 - [ ] At most one semicolon in the document
 - [ ] One example per point at most. No code strings or ids a reader doesn't need to type. Every link shows a name, never a path or URL

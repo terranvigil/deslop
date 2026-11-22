@@ -372,6 +372,17 @@ AFTERTHOUGHT_MAX_WORDS = 7
 # the recipe asks for, so a hedge word exempts it.
 AFTERTHOUGHT_HEDGED = re.compile(r"\b(seems?|usually|probably|likely|might|may|could|often|generally|roughly|perhaps|maybe|I think|I suspect)\b", I)
 APHORISTIC_ECHO = re.compile(r"^That (takes|is|was|does|means) [a-z']+\.$")
+# the self-description form of the tail: a short sentence opening on a
+# quantifier that tells the reader how the page itself is built ("Each
+# short answer links to the data.", "Every chart comes from one script.").
+# it needs a noun naming a part of the document and a verb of linking or
+# sourcing, which keeps out "Each lane holds six swimmers." measured: 0 in
+# 178k words of pre-LLM technical prose and 0 in 44k of one writer's own,
+# against 4 in 780k words of generated docs and sites.
+SELFDESC_OPENERS = frozenset("each every all both".split())
+SELFDESC_MAX_WORDS = 10
+SELFDESC_NOUN = re.compile(r"\b(answers?|charts?|pages?|sections?|tables?|links?|data|figures?|rows?|numbers?|results?|entr(y|ies)|items?|examples?|graphs?|cells?|scripts?|sources?|claims?|readings?|options?)\b", I)
+SELFDESC_VERB = re.compile(r"\b(links?|points?|cites?|comes?|has|have|carr(y|ies)|names?|lists?|shows?|includes?|leads?|goes|go|gives?)\b", I)
 
 # document-level thresholds, copied from the script
 OVERUSED_QUALIFIERS = ("deliberately", "plainly", "simply", "relatively")  # 3+
